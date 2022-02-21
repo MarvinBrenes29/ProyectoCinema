@@ -1,0 +1,58 @@
+:root {
+    --primary: #dae3ec;
+    --secundary: #ff6701;
+    --black: #041735;
+    --gray: #d1dae4ef;
+    --font: "Inter", sans-serif;
+  }
+  
+  html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+  }
+  
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+  
+  body {
+    font-family: var(--fuentePricipal);
+    font-size: 1.6rem;
+    line-height: 1.2;
+  }
+  
+  h1,
+  h2,
+  h3 {
+    font-weight: 900;
+  
+  }
+  
+  h1 {
+    font-size: 5rem;
+  }
+  
+  h2 {
+    font-size: 4.5rem;
+  }
+  
+  h3 {
+    font-size: 4rem;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  img {
+    max-width: 100%;
+    display: block;
+  }
+  
+  .container{
+    max-width: 150rem;
+    margin: 0 auto;
+    width: 90%;
+  }
