@@ -1,58 +1,228 @@
 :root {
-    --primary: #dae3ec;
-    --secundary: #ff6701;
-    --black: #041735;
-    --gray: #d1dae4ef;
-    --font: "Inter", sans-serif;
+  --primario: #C70039;
+  --secundario: #BE4A6B;
+  --negro: #1E2022;
+  --gris: #F6F6F6;
+  --fuentePrincipal: "Poppins", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+
+  font-size: 1.6rem;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 5rem;
+}
+
+h2 {
+  font-size: 4.5rem;
+}
+
+h3 {
+  font-size: 4rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.header {
+  min-width: 100rem;
+  background-image: url(../img/Venom.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 40rem;
+  padding: 2rem;
+}
+
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  max-width: 1050px;
+  width: 90%;
+  margin: auto;
+}
+.logo{
+  width: 5rem;
+}
+.cinema{
+  color: #FFF;
+  font-family: var(--fuentePricipal);
+  font-size: 1.8rem;
+}
+.nav-link{
+  color: #fff !important;
+  margin-top: 1.5rem;
+}
+.nav-link:hover{
+  color: var(--primario) !important;
+}
+@media(min-width: 768px){
+  .nav-link{
+    margin-top: 0;
+    font-size: 1.8rem;
   }
-  
-  html {
-    font-size: 62.5%;
-    box-sizing: border-box;
+}
+/*Slider*/
+.slider__contenedor{
+padding-left: 0;
+}
+.slider{
+/*Todo lo que esté por fuera, está oculto*/
+overflow: hidden;
+position: relative;
+margin-top: 6rem;
+}
+.slider__slide{
+  height: 100%;
+  flex-shrink:0;
+  width: 100%;
+  position: relative;
+  transition-property: transform;
+
+}
+.slider__imagen{
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.swiper-button-next,
+.swiper-button-prev{
+  color: #fff;
+  opacity: .5;
+}
+.swiper-pagination-bullet {
+  background-color: #fff;
+  opacity: .5;
+}
+.swiper-pagination-bullet-active{
+background-color: var(--primario) ;
+}
+/**Secciones**/
+.cartelera{
+margin-top: 4rem;
+margin-bottom: 4rem;
+}
+.propiedades__heading {
+  font-weight: 400;
+  margin-bottom: 3rem;
+  font-family: var(--fuentePricipal);
+  font-size: 2.8rem;
+}
+.propiedades__heading::after {
+  background-image: linear-gradient(
+    90deg,
+    var(--primario) 0,
+    var(--primario) 50%,
+    var(--secundario) 0,
+    var(--secundario)
+  );
+  content: "";
+  display: block;
+  height: 0.8rem;
+  margin-top: 0.8rem;
+  width: 17rem;
+  margin: 0;
+}
+.pelicula{
+  margin-top: 2rem;
+}
+.pelicula__imagen {
+  max-width: 100%;
+  width: 20rem;
+}
+.pelicula__texto{
+  margin-top: 1rem;
+  font-weight: 400;
+  font-size: 1.8rem;
+}
+.pelicula__texto:hover{
+  color: var(--primario);
+  font-weight: 900;
+}
+.propiedades__estrenos::after {
+  background-image: linear-gradient(
+    90deg,
+    #3b4862 0,
+    #3b4862 50%,
+    #6277a1 0,
+    #6277a1
+  );
+  content: "";
+  display: block;
+  height: 1rem;
+  margin-top: 0.8rem;
+  width: 27rem;
+}
+.estrenos {
+  margin-bottom: 10rem;
+}
+/**FOOTER**/
+.footer {
+  background-color: var(--negro);
+  padding: 3rem;
+}
+
+@media (min-width: 788px) {
+  .footer {
+    padding: 1rem;
   }
-  
-  *,
-  *:before,
-  *:after {
-    box-sizing: inherit;
+}
+
+@media (min-width: 788px) {
+  .footer__contenido {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+   
   }
-  
-  body {
-    font-family: var(--fuentePricipal);
-    font-size: 1.6rem;
-    line-height: 1.2;
+}
+.footer__contenido{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+@media (min-width: 768px){
+  .footer__contenido{
+    flex-direction: row;
+    justify-content: center;
+    justify-content: space-around;
   }
+}
+.footer__logo {
+  width: 8rem;
+
+}
+.footer__social {
+  width: 3rem;
+  display: inline-block;
+  margin-right: 1rem;
+}
+.footer__texto {
+  color: #fff;
+  font-size: 1.4rem;
+  text-align: center;
   
-  h1,
-  h2,
-  h3 {
-    font-weight: 900;
-  
-  }
-  
-  h1 {
-    font-size: 5rem;
-  }
-  
-  h2 {
-    font-size: 4.5rem;
-  }
-  
-  h3 {
-    font-size: 4rem;
-  }
-  
-  a {
-    text-decoration: none;
-  }
-  
-  img {
-    max-width: 100%;
-    display: block;
-  }
-  
-  .container{
-    max-width: 150rem;
-    margin: 0 auto;
-    width: 90%;
-  }
+}
+
