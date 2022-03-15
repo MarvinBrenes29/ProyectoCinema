@@ -37,6 +37,7 @@ h3 {
 
 a {
   text-decoration: none;
+  color: var(--negro);
 }
 
 img {
@@ -52,7 +53,6 @@ img {
   height: 40rem;
   padding: 2rem;
 }
-
 
 body {
   font-family: "Poppins", sans-serif;
