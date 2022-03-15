@@ -226,3 +226,11 @@ margin-bottom: 4rem;
   
 }
 
+/*--HERO--*/
+.hero{
+  min-height: 60rem;
+    background-image: url(../img/Venom.jpg);
+    background-size: cover;
+    background-position: center;
+  opacity: 0.8;
+}
