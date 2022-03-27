@@ -298,3 +298,38 @@ margin-top: 2rem;
   transition-duration: .3s;
   margin-top: 0;
 }
+
+/*------Movies----*/
+.movie__info{
+margin-top: 5rem;
+margin-bottom: 10rem;
+}
+
+.movie__grid{
+  display: flex;
+  justify-content: space-between;
+}
+.movie__heading{
+  margin: 0;
+  margin-bottom: 1rem;
+}
+.movie__img{
+  width: 16rem;
+}
+.movie__titles{
+  font-weight: bold;
+}
+.movie__description{
+  display: inline-flex;
+  gap: 1rem;
+margin-top: 0.8rem;
+
+}
+
+.movie__resume{
+  line-height: 1.8;
+}
+
+.map{
+  height: 50rem;
+}
