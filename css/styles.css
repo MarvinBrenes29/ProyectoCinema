@@ -178,7 +178,7 @@ margin-bottom: 4rem;
 .estrenos {
   margin-bottom: 10rem;
 }
-/**FOOTER**/
+/**footer**/
 .footer {
   background-color: var(--negro);
   padding: 3rem;
@@ -245,4 +245,56 @@ margin-bottom: 4rem;
   margin-top: 3rem;
   
   height: 60rem;
+}
+
+/*Search*/
+
+.search{
+  background-color: #F2F2F2;
+  padding: 5rem 0;
+}
+.search__heading{
+  text-align: center;
+  margin: 0;
+}
+
+.form{
+display: flex;
+flex-direction: column;
+margin-top: 2rem;
+}
+
+@media (min-width: 768px){
+  .form{
+    display: grid;
+    grid-template-columns: repeat(4,2fr);
+    column-gap: 2rem;
+  }
+}
+
+.form__seccion{
+  padding: 1rem;
+  border: 1px solid var(--gray);
+  margin-bottom: 2rem;
+
+}
+
+@media(min-width: 768px){
+  .form__seccion{
+    margin-bottom: 0;
+  }
+}
+.form__submit{
+  background-color: var(--primario);
+  padding: 1.5rem 4rem;
+  color: #FFF;
+  margin-top: 2rem;
+  font-size: 2rem;
+  font-weight: 400;
+  display: inline-block;
+  font-weight: 700;
+  border: none;
+  transition-property: background-color;
+  transition-duration: .3s;
+  margin-top: 0;
 }
