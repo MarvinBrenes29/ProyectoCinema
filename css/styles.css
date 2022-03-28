@@ -333,3 +333,58 @@ margin-top: 0.8rem;
 .map{
   height: 50rem;
 }
+
+.hero-map{
+  min-height: 60rem;
+ background-color: beige;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contacto__texto{
+  margin-top: 3.5rem;
+  width: 50%;
+  text-align: center;
+  line-height: 1.8;
+}
+.contacto__texto::after {
+  background-image: linear-gradient(
+    90deg,
+    #3b4862 0,
+    #3b4862 50%,
+    #6277a1 0,
+    #6277a1
+  );
+  content: "";
+  display: block;
+  height: 1rem;
+  width: 20rem;
+  margin: 0 auto;
+  margin-top: 2rem;
+  
+}
+
+.contacto__heading{
+display: flex;
+justify-content: center;
+}
+.contacto__grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.contacto{
+  background-color: rgb(243, 243, 243);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contacto__descripcion{
+  width: 75%;
+  line-height: 1.8;
+}
