@@ -1,8 +1,8 @@
 :root {
-  --primario: #C70039;
-  --secundario: #BE4A6B;
-  --negro: #1E2022;
-  --gris: #F6F6F6;
+  --primario: #c70039;
+  --secundario: #be4a6b;
+  --negro: #1e2022;
+  --gris: #f6f6f6;
   --fuentePrincipal: "Poppins", sans-serif;
 }
 
@@ -18,7 +18,6 @@ html {
 }
 
 body {
-
   font-size: 1.6rem;
   line-height: 1.2;
 }
@@ -63,66 +62,65 @@ body {
   width: 90%;
   margin: auto;
 }
-.logo{
+.logo {
   width: 5rem;
 }
-.cinema{
-  color: #FFF;
+.cinema {
+  color: #fff;
   font-family: var(--fuentePricipal);
   font-size: 1.8rem;
 }
-.nav-link{
+.nav-link {
   color: #fff !important;
   margin-top: 1.5rem;
 }
-.nav-link:hover{
+.nav-link:hover {
   color: var(--primario) !important;
 }
-@media(min-width: 768px){
-  .nav-link{
+@media (min-width: 768px) {
+  .nav-link {
     margin-top: 0;
     font-size: 1.8rem;
   }
 }
 /*Slider*/
-.slider__contenedor{
-padding-left: 0;
+.slider__contenedor {
+  padding-left: 0;
 }
-.slider{
-/*Todo lo que esté por fuera, está oculto*/
-overflow: hidden;
-position: relative;
-margin-top: 6rem;
+.slider {
+  /*Todo lo que esté por fuera, está oculto*/
+  overflow: hidden;
+  position: relative;
+  margin-top: 6rem;
 }
-.slider__slide{
+.slider__slide {
   height: 100%;
-  flex-shrink:0;
+  flex-shrink: 0;
   width: 100%;
   position: relative;
   transition-property: transform;
-
 }
-.slider__imagen{
+.slider__imagen {
   width: 100%;
   margin-top: 1rem;
 }
 
 .swiper-button-next,
-.swiper-button-prev{
+.swiper-button-prev {
   color: #fff;
-  opacity: .5;
+  opacity: 0.5;
 }
 .swiper-pagination-bullet {
   background-color: #fff;
-  opacity: .5;
+  opacity: 0.5;
 }
-.swiper-pagination-bullet-active{
-background-color: var(--primario) ;
+.swiper-pagination-bullet-active {
+  background-color: var(--primario);
 }
 /**Secciones**/
-.cartelera{
-margin-top: 4rem;
-margin-bottom: 4rem;
+.cartelera {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
 }
 .propiedades__heading {
   font-weight: 400;
@@ -145,19 +143,19 @@ margin-bottom: 4rem;
   width: 17rem;
   margin: 0;
 }
-.pelicula{
+.pelicula {
   margin-top: 2rem;
 }
 .pelicula__imagen {
   max-width: 100%;
   width: 20rem;
 }
-.pelicula__texto{
+.pelicula__texto {
   margin-top: 1rem;
   font-weight: 400;
   font-size: 1.8rem;
 }
-.pelicula__texto:hover{
+.pelicula__texto:hover {
   color: var(--primario);
   font-weight: 900;
 }
@@ -194,17 +192,16 @@ margin-bottom: 4rem;
   .footer__contenido {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-   
   }
 }
-.footer__contenido{
+.footer__contenido {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2rem;
 }
-@media (min-width: 768px){
-  .footer__contenido{
+@media (min-width: 768px) {
+  .footer__contenido {
     flex-direction: row;
     justify-content: center;
     justify-content: space-around;
@@ -212,7 +209,6 @@ margin-bottom: 4rem;
 }
 .footer__logo {
   width: 8rem;
-
 }
 .footer__social {
   width: 3rem;
@@ -223,120 +219,12 @@ margin-bottom: 4rem;
   color: #fff;
   font-size: 1.4rem;
   text-align: center;
-  
 }
 
 /*--HERO--*/
-.hero{
+.hero {
   min-height: 60rem;
-    background-image: url(../img/Venom.jpg);
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-
-}
-
-
-.drop{
-  margin-top: 3rem;
-  
-  height: 60rem;
-}
-
-/*Search*/
-
-.search{
-  background-color: #F2F2F2;
-  padding: 5rem 0;
-}
-.search__heading{
-  text-align: center;
-  margin: 0;
-}
-
-.form{
-display: flex;
-flex-direction: column;
-margin-top: 2rem;
-}
-
-@media (min-width: 768px){
-  .form{
-    display: grid;
-    grid-template-columns: repeat(4,2fr);
-    column-gap: 2rem;
-  }
-}
-
-.form__seccion{
-  padding: 1rem;
-  border: 1px solid var(--gray);
-  margin-bottom: 2rem;
-
-}
-
-@media(min-width: 768px){
-  .form__seccion{
-    margin-bottom: 0;
-  }
-}
-.form__submit{
-  background-color: var(--primario);
-  padding: 1.5rem 4rem;
-  color: #FFF;
-  margin-top: 2rem;
-  font-size: 2rem;
-  font-weight: 400;
-  display: inline-block;
-  font-weight: 700;
-  border: none;
-  transition-property: background-color;
-  transition-duration: .3s;
-  margin-top: 0;
-}
-
-/*------Movies----*/
-.movie__info{
-margin-top: 5rem;
-margin-bottom: 10rem;
-}
-
-.movie__grid{
-  display: flex;
-  justify-content: space-between;
-}
-.movie__heading{
-  margin: 0;
-  margin-bottom: 1rem;
-}
-.movie__img{
-  width: 16rem;
-}
-.movie__titles{
-  font-weight: bold;
-}
-.movie__description{
-  display: inline-flex;
-  gap: 1rem;
-margin-top: 0.8rem;
-
-}
-
-.movie__resume{
-  line-height: 1.8;
-}
-
-.map{
-  height: 50rem;
-}
-
-.hero-map{
-  min-height: 60rem;
- background-color: beige;
+  background-image: url(../img/Venom.jpg);
   background-size: cover;
   background-position: center;
   display: flex;
@@ -345,7 +233,109 @@ margin-top: 0.8rem;
   align-items: center;
 }
 
-.contacto__texto{
+.drop {
+  margin-top: 3rem;
+
+  height: 60rem;
+}
+
+/*Search*/
+
+.search {
+  background-color: #f2f2f2;
+  padding: 5rem 0;
+}
+.search__heading {
+  text-align: center;
+  margin: 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .form {
+    display: grid;
+    grid-template-columns: repeat(4, 2fr);
+    column-gap: 2rem;
+  }
+}
+
+.form__seccion {
+  padding: 1rem;
+  border: 1px solid var(--gray);
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .form__seccion {
+    margin-bottom: 0;
+  }
+}
+.form__submit {
+  background-color: var(--primario);
+  padding: 1.5rem 4rem;
+  color: #fff;
+  margin-top: 2rem;
+  font-size: 2rem;
+  font-weight: 400;
+  display: inline-block;
+  font-weight: 700;
+  border: none;
+  transition-property: background-color;
+  transition-duration: 0.3s;
+  margin-top: 0;
+}
+
+/*------Movies----*/
+.movie__info {
+  margin-top: 5rem;
+  margin-bottom: 10rem;
+}
+
+.movie__grid {
+  display: flex;
+  justify-content: space-between;
+}
+.movie__heading {
+  margin: 0;
+  margin-bottom: 1rem;
+}
+.movie__img {
+  width: 16rem;
+}
+.movie__titles {
+  font-weight: bold;
+}
+.movie__description {
+  display: inline-flex;
+  gap: 1rem;
+  margin-top: 0.8rem;
+}
+
+.movie__resume {
+  line-height: 1.8;
+}
+
+.map {
+  height: 50rem;
+}
+
+.hero-map {
+  min-height: 60rem;
+  background-color: beige;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contacto__texto {
   margin-top: 3.5rem;
   width: 50%;
   text-align: center;
@@ -365,18 +355,17 @@ margin-top: 0.8rem;
   width: 20rem;
   margin: 0 auto;
   margin-top: 2rem;
-  
 }
 
-.contacto__heading{
-display: flex;
-justify-content: center;
+.contacto__heading {
+  display: flex;
+  justify-content: center;
 }
-.contacto__grid{
+.contacto__grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
-.contacto{
+.contacto {
   background-color: rgb(243, 243, 243);
   padding: 2rem;
   display: flex;
@@ -384,7 +373,7 @@ justify-content: center;
   align-items: center;
 }
 
-.contacto__descripcion{
+.contacto__descripcion {
   width: 75%;
   line-height: 1.8;
 }
