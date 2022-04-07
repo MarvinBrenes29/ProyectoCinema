@@ -319,7 +319,7 @@ body {
   height: 1rem;
   width: 20rem;
   margin: 0 auto;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 .contacto__heading {
@@ -545,6 +545,14 @@ text-align: center;
 .error__caja{
   margin-top: 5rem;
 }
+
+/**Mapa**/
+#map { 
+	width: 100%; 
+	height: 400px;
+  margin-top: 10rem;
+}
+
 /**footer**/
 .footer {
   background-color: var(--negro);
