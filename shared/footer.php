@@ -1,7 +1,33 @@
+<!--.footer-->
+<footer class="footer">
+    <div class="footer__contenido container">
+      <div>
+        <a href="index.html">
+          <img class="footer__logo" src="img/Logo.png" alt="">
+        </a>
+      </div>
+      <div class="footer__redes">
+        <a href="">
+          <img class="footer__social" src="img/facebook.png" alt="facebook">
+        </a>
+        <a href="#">
+          <img class="footer__social" src="img/instagram.png" alt="instagram">
+        </a>
+        <a href="#">
+          <img class="footer__social" src="img/youtube .png" alt="youtube">
+        </a>
+      </div>
+
+      <div>
+        <p class="footer__texto">Todos los derechos reservados &copy</p>
+      </div>
+
+
+    </div>
+
 <!--.footer__contenido-->
 
 </footer>
-<script src="js/app.js"></script>
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
    crossorigin=""></script>
@@ -10,6 +36,8 @@
     crossorigin="anonymous"></script>
   <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
   <script src="js/apps.js"></script>
+  <script src="js/app.js"></script>
+
 </body>
 
 </html>

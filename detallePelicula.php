@@ -77,31 +77,6 @@ include "shared/header.php";
   </main>
 
 
-  <footer class="footer">
-    <div class="footer__contenido">
-      <div>
-        <a href="index.html">
-          <img class="footer__logo" src="img/Logo.png" alt="">
-        </a>
-      </div>
-      <div class="footer__redes">
-        <a href="">
-          <img class="footer__social" src="img/facebook.png" alt="facebook">
-        </a>
-        <a href="#">
-          <img class="footer__social" src="img/instagram.png" alt="instagram">
-        </a>
-        <a href="#">
-          <img class="footer__social" src="img/youtube .png" alt="youtube">
-        </a>
-      </div>
-
-      <div>
-        <p class="footer__texto">Todos los derechos reservados &copy</p>
-      </div>
-
-
-    </div>
 <?php
 include "shared/footer.php";
 ?>

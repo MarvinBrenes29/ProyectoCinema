@@ -18,7 +18,7 @@ include "shared/header.php";
                     <input class="btn btn-dark" type="submit" value="Iniciar Sesión">
                 </div>
                 <div class="mb-3 d-grid gap-2">
-                    <a class="btn btn-outline-dark" href="registrarse.html">Registrarse</a>
+                    <a class="btn btn-outline-dark" href="registrarse.php">Registrarse</a>
                 </div>
             </form>
         </div>
