@@ -54,7 +54,7 @@ include "shared/header.php";
     <div class="pelicula">
       <div class="swiper-container swiper">
         <div class="swiper-wrapper">
-          <div type="submit" class="swiper-slide"><img class="img__pelicula" src="img/dog.jpg" alt="Movie Title"> Some Text</div>
+          <div class="swiper-slide"><img class="img__pelicula" src="img/dog.jpg" alt="Movie Title"> Some Text</div>
           <div class="swiper-slide"><img class="img__pelicula" src="img/dog.jpg" alt="Movie Title">Some Text</div>
           <div class="swiper-slide"><img class="img__pelicula" src="img/dog.jpg" alt="Movie Title">Some Text</div>
           <div class="swiper-slide"><img class="img__pelicula" src="img/dog.jpg" alt="Movie Title">Some Text</div>
