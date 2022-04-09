@@ -1,62 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,100&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <title>Cinema</title>
-</head>
-
-<body>
-
-    <body>
-
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top mt-10 ">
-            <div class="container">
-                <a href="index.html" class="cinema">
-                    <img class="logo" src="img/Logo.png" alt="">
-                </a>
-
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
-                    <span class="navbar-toggler-icon "></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navmenu">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a href="index.html" class="nav-link">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pelicula.html" class="nav-link">Películas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="nosotros.html" class="nav-link">Nosotros</a>
-
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+<?php
+include "shared/header.php";
+?>
 
 
-
-        <section class="hero-map">
-            <div>
-                <h3>Mapa</h3>
+        <section >
+            <div class="map container">
+                <fieldset id="contenedorMapa">
+                    <legend>Mapa</legend>
+                    <div id="containerMapa">
+                      <div id="map" class="mx-auto"></div>
+                    </div>
+                    <div id='mapaProvincia' style='width: 500px; height: 400px'></div>
+                  </fieldset>
             </div>
         </section>
-        <!--hero-map-->
+        <!--map-->
 
         <section>
             <div class="contacto__heading">
@@ -67,6 +25,7 @@
             </div>
         </section>
         <!--.contacto-->
+        
 
         <section class="container contacto__grid">
             <div>
@@ -125,10 +84,7 @@
 
         </section>
 
-
-
-
-
+        
 
         <!--.footer-->
         <footer class="footer">
@@ -156,9 +112,6 @@
 
 
             </div>
-            <!--.footer__contenido-->
-        </footer>
-        <script src="js/app.js"></script>
-    </body>
-
-</html>
+<?php
+include "shared/footer.php";
+?>

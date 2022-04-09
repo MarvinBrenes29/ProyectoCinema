@@ -15,8 +15,9 @@ window.swiper = new Swiper({
 
 
 var swipercards = new Swiper('.swiper-container', {
-    slidesPerView: 4,
-    spaceBetween: 10,
+    width: 700,
+    slidesPerView: 3,
+    spaceBetween: 30,
     slidesPerGroup: 2,
     loop: true,
     pagination: {
