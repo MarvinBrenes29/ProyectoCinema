@@ -43,8 +43,8 @@ include "shared/header.php";
                 <form id="enviar-mail" class="">
 
                     <div class="">
-                        <label for="asunto">Nombre*</label>
-                        <input class="" id="nombre" type="text">
+                        <label class="form__nombre" for="asunto">Nombre*</label>
+                        <input id="nombre" type="text">
                     </div>
 
 
@@ -69,9 +69,8 @@ include "shared/header.php";
                         </div>
                     </div>
 
-                    <div class="">
-                        <button id="enviar" class="" type="submit">Enviar
-
+                    <div>
+                        <button id="enviar" class="btn__enviar" type="submit">Enviar
                         </button>
 
 
