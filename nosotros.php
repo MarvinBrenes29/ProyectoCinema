@@ -22,8 +22,15 @@ include "shared/header.php";
 
     </div>
 
-   <div class="mapa">
-       
+ 
+   <fieldset id="contenedorMapa">
+      
+              <div id="containerMapa">
+                <div id="map" class="mx-auto"></div>
+              </div>
+              <div id='mapaProvincia' style='width: 500px; height: 400px'></div>
+            </fieldset>
+          </div>
    </div>
 
 </section>

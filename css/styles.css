@@ -281,8 +281,10 @@ body {
 
 /*--MAPA--*/
 
-.map {
-  height: 50rem;
+
+#map{
+  width: 80%;
+  height: 400px;
 }
 
 .hero-map {
@@ -710,7 +712,6 @@ text-align: center;
 }
 .mapa{
 height: 50rem;
-background-color: #181616;
 }
 
 .mapa__heading{
