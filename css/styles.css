@@ -281,8 +281,10 @@ body {
 
 /*--MAPA--*/
 
-.map {
-  height: 50rem;
+
+#map{
+  width: 80%;
+  height: 400px;
 }
 
 .hero-map {
@@ -447,7 +449,9 @@ font-weight: 500;
 }
 .contacto__redes{
   color: var(--secundario);
-  margin-bottom: 2rem;
+  margin: 0;
+  margin-top: 1rem;
+  
 }
 /*--*/
 
@@ -659,7 +663,7 @@ color: white;
 /*-Error 404**/
 
 .error{
-  background-color: #fbfbfb;
+  background-color: #181616;
   margin-top: 3rem;
 }
 
@@ -703,12 +707,33 @@ text-align: center;
 }
 
 /**Mapa**/
-#map { 
-	width: 100%; 
-	height: 400px;
+.container__mapa{
   margin-top: 10rem;
+  padding: 2rem;
+
+}
+.mapa{
+height: 50rem;
 }
 
+.mapa__heading{
+  color: #181616;
+  margin-bottom: 2rem;
+}
+
+.mapa__provincia{
+  font-size: 2rem;
+  margin-bottom: 2rems;
+}
+
+.mapa__provincias{
+  font-size: 1.6rem;
+  line-height: 30px;
+}
+
+.form-control {
+  width: 20%;
+}
 .form__input{
   padding:10px 10px;
     line-height:100%;
@@ -719,6 +744,32 @@ text-align: center;
   line-height:180%;
 }
 
+.contacto__img{
+  width: 4rem;
+  height: 4rem;
+}
+
+.contacto__logos{
+  display: flex;
+  gap: 2rem;
+  flex-direction: row;
+  margin-bottom: 2rem;
+  
+  
+}
+
+.historial{
+  margin-top: 15rem;
+  margin-bottom: 45rem;
+}
+
+.modificar{
+  margin-top: 15rem;
+  margin-bottom: 45rem;
+}
+.historial__heading{
+  margin-bottom: 5rem;
+}
 /**footer**/
 .footer {
   background-color: #212529;
