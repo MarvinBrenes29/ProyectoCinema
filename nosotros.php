@@ -3,12 +3,33 @@ include "shared/header.php";
 ?>
 
 
-<section>
-   
+<section class="container__mapa">
+   <h3 class="mapa__heading">Sucursales</h3>
+   <div id="contenido">
+            <fieldset>
+              <legend class="mapa__provincia">Seleccione la Provincia</legend>
+                <select class="form-control form-control-lg mb-5" id="provincia">
+                  <option class="mapa__provincias" value="San Jose">San José</option>
+                  <option class="mapa__provincias"  value="Alajuela">Alajuela</option>
+                  <option class="mapa__provincias"  value="Heredia">Heredia</option>
+                  <option class="mapa__provincias" value="Cartago">Cartago</option>
+                  <option class="mapa__provincias" value="Guanacaste">Guanacaste</option>
+                  <option class="mapa__provincias" value="Puntarenas">Puntarenas</option>
+                  <option class="mapa__provincias" value="Limon">Limón</option>
+                </select>
+                <button id="cargar" class="btn btn-outline-success btn-lg">Buscar</button>
+            </fieldset>
+
+    </div>
+
+   <div class="mapa">
+       
+   </div>
+
 </section>
 <!--map-->
 
-<section>
+<section class="mt-5">
     <div class="contacto__heading">
         <h4 class="contacto__texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
             vulputate sed
