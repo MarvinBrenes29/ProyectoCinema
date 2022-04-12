@@ -818,3 +818,9 @@ height: 50rem;
   font-size: 1.4rem;
   text-align: center;
 }
+
+
+/* Aqui le dejo la clase para que la modifique */
+.imgUsr{
+  width: 2rem;
+}

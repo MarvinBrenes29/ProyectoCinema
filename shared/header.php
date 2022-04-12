@@ -1,3 +1,5 @@
+<?php session_start() ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,6 +46,11 @@
             <a href="nosotros.php" class="nav-link">Nosotros</a>
           </li>
           <!--Dropdown-->
+          <?php if (
+                isset($_SESSION["login"]) &&
+                strcmp($_SESSION["rol"], "admin") == 0
+          ) { ?>
+
           <div class="container-fluid">
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -64,11 +71,21 @@
                 </ul>
             </div>
         </div>
+
+        <?php } ?>
         <!--Dropdown-->
         </ul>
-        <li>
+        <?php if (!isset($_SESSION["login"])) { ?>
+          <li>
             <a href="login.php" class="nav-link--button">Iniciar Sesión</a>
           </li>
+          <?php } ?>
+          <?php if (isset($_SESSION["login"])) { ?>
+              <li class="nav-item"><a class="nav-link" href="logout.php">Salir</a></li>
+          <?php } ?>
+          <?php if (isset($_SESSION["login"])) { ?>
+              <li><a id="linkUsr" href=""><img class="imgUsr" src="img/usuarios/<?php echo $_SESSION["usuario"] ?>.jpg" alt=""></a></li>
+          <?php } ?>
       </div>
     </div>
   </nav>
