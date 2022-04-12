@@ -1,9 +1,9 @@
 <?php
 include "shared/header.php";
 ?>
-  <form>
-    <div class="container">
-      <h1>Admnistración de Salas</h1>
+  <form class="container">
+    <div class="administracion">
+      <h1 class="administracion__heading">Admnistración de Salas</h1>
 
       <div class="form-floating mb-3">
         <input type="text" class="form-control" name="" id="" placeholder="Nombre">
@@ -23,7 +23,11 @@ include "shared/header.php";
           <option value="value3">Inactivo</option>
         </select>
       </div>
-      <a class="error__button" href="index.html">Regresar</a>
+      <div class="adm__botones">
+         <button class="btn btn-primary btn-lg">Guardar</button>
+      <a class="btn btn-success btn-lg" href="index.html">Regresar</a>
+      </div>
+     
     </div>
 
 

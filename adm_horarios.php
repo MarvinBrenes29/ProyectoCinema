@@ -1,9 +1,10 @@
 <?php
 include "shared/header.php";
 ?>
-  <form>
-    <div class="container">
-      <h1>Administracion de Horarios</h1>
+  <form class="container">
+  <div class="administracion">
+  
+      <h1 class="administracion__heading">Administracion de Horarios</h1>
 
 
       <div class="form-floating mb-3">
@@ -30,10 +31,13 @@ include "shared/header.php";
 
 
 
-      <a class="error__button" href="index.html">Regresar</a>
-    </div>
+      <div class="adm__botones">
+         <button class="btn btn-primary btn-lg">Guardar</button>
+      <a class="btn btn-success btn-lg" href="index.html">Regresar</a>
+      </div>
+   
 
-
+</div>
   </form>
 
 <?php
