@@ -757,6 +757,15 @@ height: 50rem;
   
   
 }
+
+.historial{
+  margin-top: 15rem;
+  margin-bottom: 45rem;
+}
+
+.historial__heading{
+  margin-bottom: 5rem;
+}
 /**footer**/
 .footer {
   background-color: #212529;
