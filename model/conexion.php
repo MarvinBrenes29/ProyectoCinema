@@ -5,14 +5,13 @@
         protected function conectar()
         {
             $server = "localhost:3308";
-            $db = "bdrentapp";
-            $usr = "usrRentaapp";
+            $db = "proyectocinema";
+            $usr = "usrCinema";
             $pass = "123";
     
             try {
-                //1-definir la cadena de conexion
+                
                 $con_string = "mysql:host=$server;dbname=$db";
-                //2-instanciar el objeto PDO
                 $dbh = new PDO($con_string, $usr, $pass);
                 // echo "Conexion exitosa";
                 return $dbh;
