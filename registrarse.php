@@ -1,8 +1,8 @@
 <?php
 include "shared/header.php";
 ?>
-    <main>
-        <div class="container">
+    <main class="container">
+        <div class="administracion">
             <form class="w-40 m-auto" action="" method="POST">
                 <div class="d-flex justify-content-center bd-highlight mb-3">
 

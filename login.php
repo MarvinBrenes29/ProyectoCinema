@@ -1,9 +1,9 @@
 <?php
 include "shared/header.php";
 ?>
-    <main>
-        <div class="container">
-            <h1 class="text-center mt-5">Iniciar Sesión</h1>
+    <main class="container">
+        <div class="administracion">
+            <h1 class="">Iniciar Sesión</h1>
 
             <form class="w-40 m-auto" action="" method="POST">
                 <div class="mb-3">

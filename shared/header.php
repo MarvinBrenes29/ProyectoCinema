@@ -51,9 +51,11 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="adm_banners.php">Administración de Banners</a></li>
+                       
                         <li><a class="dropdown-item" href="adm_peliculas.php">Administración de Peliculas</a></li>
-                        <li><a class="dropdown-item" href="adm_horarios.php">Administración de Horarios</a></li>
                         <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="adm_horarios.php">Administración de Horarios</a></li>
+                   
                         <li><a class="dropdown-item" href="adm_salas.php">Administracion de Salas</a></li>
                         </ul>
                     </li>
@@ -61,10 +63,10 @@
             </div>
         </div>
         <!--Dropdown-->
-          <li class="nav-item">
+        </ul>
+        <li>
             <a href="login.php" class="nav-link--button">Iniciar Sesión</a>
           </li>
-        </ul>
       </div>
     </div>
   </nav>

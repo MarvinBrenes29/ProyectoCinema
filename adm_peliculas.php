@@ -1,10 +1,10 @@
 <?php
 include "shared/header.php";
 ?>
-  <form>
+  <form class="container">
 
-    <div class="container">
-      <h1>Administracion de Películas</h1>
+    <div class="administracion">
+      <h1 class="administracion__heading">Administracion de Películas</h1>
       <div class="form-floating mb-3">
         <input type="text" class="form-control" name="" id="" placeholder="Titulo">
         <label for="">Titulo</label>
@@ -58,7 +58,10 @@ include "shared/header.php";
       </div>
 
 
-      <a class="error__button" href="index.html">Regresar</a>
+      <div class="adm__botones">
+         <button class="btn btn-primary btn-lg">Guardar</button>
+      <a class="btn btn-success btn-lg" href="index.html">Regresar</a>
+      </div>
 
     </div>
 

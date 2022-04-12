@@ -4,15 +4,7 @@ include "shared/header.php";
 
 
 <section>
-    <div class="map container">
-        <fieldset id="contenedorMapa">
-            <legend>Mapa</legend>
-            <div id="containerMapa">
-                <div id="map" class="mx-auto"></div>
-            </div>
-            <div id='mapaProvincia' style='width: 500px; height: 400px'></div>
-        </fieldset>
-    </div>
+   
 </section>
 <!--map-->
 

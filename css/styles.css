@@ -88,15 +88,10 @@ body {
   background-color: var(--primario);
   padding: 0.8rem;
   color: #fff;
-  margin-left: 5rem;
   font-size: 1.4rem;
   font-weight: 400;
-  display: inline-block;
-  font-weight: 700;
   border: none;
-  transition-property: background-color;
-  transition-duration: 0.3s;
-  margin-top: 0;
+ 
 }
 
 /*Slider*/
@@ -552,6 +547,24 @@ color: white;
   font-weight: bold;
   text-transform: uppercase;
   margin: 3rem;
+}
+
+.dropdown-item{
+  font-size: 1.8rem !important;
+}
+
+.administracion{
+  margin-top: 17rem ;
+  width: 50% ;
+  margin-bottom: 30rem;
+}
+
+.administracion__heading{
+  margin-bottom: 4rem;
+}
+
+.adm__botones{
+  margin-top: 5rem;
 }
 /*-Error 404**/
 
