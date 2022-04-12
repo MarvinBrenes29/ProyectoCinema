@@ -52,9 +52,19 @@ include "shared/header.php";
         <h3 class="contacto__titulo">Lorem Ipsum</h3>
         <p class="contacto__descripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis cum
             inventore esse sint itaque optio fugiat recusandae voluptatum</p>
-        <p class="contacto__redes">88-88-88</p>
-        <p class="contacto__redes">contact@cinema.com</p>
-        <p class="contacto__redes">https//twitter.com/Cinema</p>
+            <div class="contacto__logos">
+                <img src="img/telephone.png"  class="contacto__img"alt="">
+                <p class="contacto__redes">88-88-88</p>
+            </div>
+        <div class="contacto__logos"> 
+        <img src="img/email.png"  class="contacto__img"alt="">
+             <p class="contacto__redes">contact@cinema.com</p>
+        </div>
+       <div class="contacto__logos">
+       <img src="img/twitter.png"  class="contacto__img"alt="">
+           <p class="contacto__redes" >https//twitter.com/Cinema</p>
+       </div>
+        
     </div>
 
     <div class="contacto">

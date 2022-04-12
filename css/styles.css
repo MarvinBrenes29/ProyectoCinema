@@ -449,7 +449,9 @@ font-weight: 500;
 }
 .contacto__redes{
   color: var(--secundario);
-  margin-bottom: 2rem;
+  margin: 0;
+  margin-top: 1rem;
+  
 }
 /*--*/
 
@@ -742,6 +744,19 @@ height: 50rem;
   line-height:180%;
 }
 
+.contacto__img{
+  width: 4rem;
+  height: 4rem;
+}
+
+.contacto__logos{
+  display: flex;
+  gap: 2rem;
+  flex-direction: row;
+  margin-bottom: 2rem;
+  
+  
+}
 /**footer**/
 .footer {
   background-color: #212529;
