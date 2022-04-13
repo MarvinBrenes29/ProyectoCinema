@@ -164,6 +164,8 @@ body {
 .pelicula {
   margin-top: 2rem;
   width: 20rem;
+  display: flex;
+  flex-direction: row;
 }
 
 .pelicula__texto {

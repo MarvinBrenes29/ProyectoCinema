@@ -149,11 +149,11 @@ class clsAdm_peliculas extends clsConexion{
                 foreach ($consulta as $key => $v) {
                     // .= es para concatenar
                     $filas .= "
+                            <div class='pelicula' type='submit'>
                                 <a href='detallePelicula.php?pelicula=$v[idpelicula]'>
-                                    <div class='pelicula' type='submit'>
                                         <img src='img/peliculas/$v[idpelicula].jpg'>
-                                    </div>
                                 </a>
+                            </div>
                     ";
                 }
                 $dbh=null;
