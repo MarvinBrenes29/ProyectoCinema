@@ -1,5 +1,8 @@
 <?php
 include "shared/header.php";
+require "model/clsAdm_peliculas.php";
+$clase_pelicula = new clsAdm_peliculas();
+ob_start();
 ?>
 
 
@@ -26,22 +29,8 @@ include "shared/header.php";
   <!--.seccion cartelera-->
   <main class=" container cartelera">
     <h3 class="propiedades__heading">En Cartelera</h3>
-    <div class="pelicula">
-      <div class="swiper-container swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide"><img class="img__pelicula" src="img/dog.jpg" alt="Movie Title"> Some Text</div>
-          <div class="swiper-slide"><img class="img__pelicula" src="img/dog.jpg" alt="Movie Title">Some Text</div>
-          <div class="swiper-slide"><img class="img__pelicula" src="img/dog.jpg" alt="Movie Title">Some Text</div>
-          <div class="swiper-slide"><img class="img__pelicula" src="img/dog.jpg" alt="Movie Title">Some Text</div>
-          <div class="swiper-slide"><img class="img__pelicula" src="img/dog.jpg" alt="Movie Title">Some Text</div>
-
-        </div>
-        <!-- Add Pagination -->
-        <!-- <div class="swiper-pagination"></div> -->
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-      </div>
-    </div>
+    
+    <?php echo $clase_pelicula->crearImagenesCartelera(); ?>
 
     </div>
   </main>

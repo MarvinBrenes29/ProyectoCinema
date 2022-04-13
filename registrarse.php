@@ -98,7 +98,7 @@ ob_start();
                         $res = move_uploaded_file($_FILES["foto"]["tmp_name"], $foto_login);
                         $clase_login->insertar_usuario($usuario, $nombre, $apellido1, $apellido2, $telefono, $fecha, $contrasenia, $correo, $administrador);
                         
-                        header("Location: login.php");
+                        // header("Location: login.php");
 
 
                     }else{
