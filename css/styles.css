@@ -163,6 +163,7 @@ body {
 
 .pelicula {
   margin-top: 2rem;
+  width: 20rem;
 }
 
 .pelicula__texto {
@@ -822,5 +823,5 @@ height: 50rem;
 
 /* Aqui le dejo la clase para que la modifique */
 .imgUsr{
-  width: 2rem;
+  width: 5rem;
 }

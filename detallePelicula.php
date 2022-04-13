@@ -1,5 +1,6 @@
 <?php
 include "shared/header.php";
+echo $_GET['pelicula'];
 ?>
   <section class="hero">
     <div>
