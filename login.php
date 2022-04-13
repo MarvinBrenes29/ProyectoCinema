@@ -1,9 +1,12 @@
 <?php
 include "shared/header.php";
+require "model/clsLogin.php";
+$clase_login = new clsLogin();
+
 ?>
-    <main>
-        <div class="container">
-            <h1 class="text-center mt-5">Iniciar Sesión</h1>
+    <main class="container">
+        <div class="administracion">
+            <h1 class="">Iniciar Sesión</h1>
 
             <form class="w-40 m-auto" action="" method="POST">
                 <div class="mb-3">
@@ -18,10 +21,51 @@ include "shared/header.php";
                     <input class="btn btn-dark" type="submit" value="Iniciar Sesión">
                 </div>
                 <div class="mb-3 d-grid gap-2">
-                    <a class="btn btn-outline-dark" href="registrarse.html">Registrarse</a>
+                    <a class="btn btn-outline-dark" href="registrarse.php">Registrarse</a>
                 </div>
             </form>
         </div>
+
+        <?php
+    
+        if (!empty($_POST)) {
+
+            $usr = $_POST["usr"];
+            $pass = $_POST["pass"];
+
+
+            $condicion = 0;
+            $condicion = $clase_login->verificar_usuario($usr, $pass);
+            
+            if ($condicion == 2) {
+
+                $_SESSION["login"]=true;
+                $_SESSION["rol"]="admin";
+                $_SESSION["usuario"] = $usr;
+                header("Location: index.php");
+
+            }else if($condicion == 1){
+
+                $_SESSION["login"]=true;
+                $_SESSION["rol"]="user";
+                $_SESSION["usuario"] = $usr;
+                header("Location: index.php");
+
+            } else{
+                $error = "1";
+            }
+        }
+    ?>
+
+    <?php if (isset($error)) { ?>
+
+        <p class="alert alert-danger" role="alert">Error: usuario o contraseña equivocada</p>
+
+    <?php } ?>
+
+
+
+
 
     </main>
 <?php

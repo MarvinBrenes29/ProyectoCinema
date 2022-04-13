@@ -55,6 +55,7 @@ img {
 
 body {
   font-family: "Poppins", sans-serif;
+  background-color: #FBFCFE;
 }
 
 .contenedor {
@@ -87,15 +88,10 @@ body {
   background-color: var(--primario);
   padding: 0.8rem;
   color: #fff;
-  margin-left: 5rem;
   font-size: 1.4rem;
   font-weight: 400;
-  display: inline-block;
-  font-weight: 700;
   border: none;
-  transition-property: background-color;
-  transition-duration: 0.3s;
-  margin-top: 0;
+ 
 }
 
 /*Slider*/
@@ -167,6 +163,7 @@ body {
 
 .pelicula {
   margin-top: 2rem;
+  width: 20rem;
 }
 
 .pelicula__texto {
@@ -285,8 +282,10 @@ body {
 
 /*--MAPA--*/
 
-.map {
-  height: 50rem;
+
+#map{
+  width: 80%;
+  height: 400px;
 }
 
 .hero-map {
@@ -300,12 +299,113 @@ body {
   align-items: center;
 }
 
+.peliculas__heading{
+  margin-top: 20rem;
+  text-align: center;
+}
+.peliculas__heading::after {
+  background-image: linear-gradient(90deg,
+      var(--primario) 0,
+      var(--primario) 50%,
+      var(--secundario) 0,
+      var(--secundario));
+  content: "";
+  display: block;
+  height: 0.8rem;
+ margin: 0 auto ;
+  width: 15rem;
+}
+
+.container-img {
+  width: 60%;
+  margin: 2rem auto; 
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 5vw);
+  grid-gap: 1.5rem; 
+}
+
+.gallery__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block; 
+}
+
+.gallery__item--1 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
+
+}
+
+.gallery__item--2 {
+  grid-column-start: 3;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 3;
+
+}
+
+.gallery__item--3 {
+  grid-column-start: 5;
+  grid-column-end: 9;
+  grid-row-start: 1;
+  grid-row-end: 6;
+
+}
+
+.gallery__item--4 {
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 3;
+  grid-row-end: 6;
+
+ 
+}
+
+.gallery__item--5 {
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 6;
+  grid-row-end: 9;
+
+
+}
+
+.gallery__item--6 {
+  grid-column-start: 5;
+  grid-column-end: 9;
+  grid-row-start: 6;
+  grid-row-end: 9;
+
+}
+
+.galeria{
+  margin-top: 5rem;
+  margin-bottom: 10rem;
+}
 /*--CONTACTO**/
+
+.contacto {
+  background-color: #ffffff;
+  padding: 2rem;
+  display: flex;
+  border-radius: 5%;
+  margin-left: 8rem;
+}
+
 .contacto__texto {
   margin-top: 3.5rem;
   width: 50%;
   text-align: center;
   line-height: 1.8;
+  font-weight:lighter ;
+  font-size: 1.8rem;
 }
 
 .contacto__texto::after {
@@ -326,25 +426,34 @@ body {
   display: flex;
   justify-content: center;
 }
+.contacto__titulo{
+margin-bottom: 2rem;
+font-weight: 500;
+}
 
 .contacto__grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-}
-
-.contacto {
-  background-color: rgb(243, 243, 243);
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  margin-top: 5rem;
+  padding: 5rem;
 }
 
 .contacto__descripcion {
   width: 75%;
   line-height: 1.8;
+  margin-bottom: 2rem;
+  color:darkgray ;
 }
 
+.contacto__info{
+  padding: 3rem;
+}
+.contacto__redes{
+  color: var(--secundario);
+  margin: 0;
+  margin-top: 1rem;
+  
+}
 /*--*/
 
 .swiper-container {
@@ -362,6 +471,38 @@ body {
 form {
   margin: 30px 0;
 }
+
+.form__titulo{
+  font-size: 1.4rem;
+  margin-top: 1rem;
+  margin-bottom: 0.6rem;
+  color: gray;
+}
+
+.form__input,
+.form__input--texto{
+  border: 1px solid #e1e1e1;
+  width: 100%;
+}
+
+.btn__enviar{
+ 
+  padding: 0.8rem;
+  color: rgb(16, 16, 16);
+  font-size: 1.8rem;
+  font-weight: 400;
+  border: 1px solid var(--secundario);
+  border-radius: 5%;
+  margin-top: 3rem;
+}
+
+.btn__enviar:hover{
+background-color: var(--secundario);
+color: white;
+}
+
+
+
 
 #loaders {
   text-align: center;
@@ -479,32 +620,50 @@ form {
 /*-ERROR-*/
 
 .border-red {
-  border: 1px solid red;
+  border: 1px solid var(--primario);
 
 }
 
 .border-green {
-  border: 1px solid green;
+  border: 1px solid rgb(4, 219, 4);
 }
 
 .error__mensaje {
-  border: 1px solid red;
-  padding: 3rem;
-  color: red;
+  border: 1px solid var(--primario);
+  padding: 2rem;
+  color: var(--primario);
 }
 
 .enviado {
   text-align: center;
   padding: 1.8rem;
-  background-color: rgb(16, 191, 28);
+  background-color: rgb(4, 219, 4);
   color: white;
   font-weight: bold;
   text-transform: uppercase;
-  margin: 0;
+  margin: 3rem;
+}
+
+.dropdown-item{
+  font-size: 1.8rem !important;
+}
+
+.administracion{
+  margin-top: 17rem;
+}
+
+.administracion__heading{
+  margin-bottom: 4rem;
+}
+
+.adm__botones{
+  margin-top: 5rem;
 }
 /*-Error 404**/
+
 .error{
-  background-color: #1e2022;
+  background-color: #181616;
+  margin-top: 3rem;
 }
 
 .error__image{
@@ -547,15 +706,72 @@ text-align: center;
 }
 
 /**Mapa**/
-#map { 
-	width: 100%; 
-	height: 400px;
+.container__mapa{
   margin-top: 10rem;
+  padding: 2rem;
+
+}
+.mapa{
+height: 50rem;
 }
 
+.mapa__heading{
+  color: #181616;
+  margin-bottom: 2rem;
+}
+
+.mapa__provincia{
+  font-size: 2rem;
+  margin-bottom: 2rems;
+}
+
+.mapa__provincias{
+  font-size: 1.6rem;
+  line-height: 30px;
+}
+
+.form-control {
+  width: 20%;
+}
+.form__input{
+  padding:10px 10px;
+    line-height:100%;
+}
+
+.form__input--texto{
+  padding: 3px 3px;
+  line-height:180%;
+}
+
+.contacto__img{
+  width: 4rem;
+  height: 4rem;
+}
+
+.contacto__logos{
+  display: flex;
+  gap: 2rem;
+  flex-direction: row;
+  margin-bottom: 2rem;
+  
+  
+}
+
+.historial{
+  margin-top: 15rem;
+  margin-bottom: 45rem;
+}
+
+.modificar{
+  margin-top: 15rem;
+  margin-bottom: 45rem;
+}
+.historial__heading{
+  margin-bottom: 5rem;
+}
 /**footer**/
 .footer {
-  background-color: var(--negro);
+  background-color: #212529;
   padding: 3rem;
 }
 
@@ -600,4 +816,10 @@ text-align: center;
   color: #fff;
   font-size: 1.4rem;
   text-align: center;
+}
+
+
+/* Aqui le dejo la clase para que la modifique */
+.imgUsr{
+  width: 5rem;
 }
