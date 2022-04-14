@@ -16,77 +16,83 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
     integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
     crossorigin=""/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+ 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="styleSillas.css" />
+    <link rel="stylesheet" href ="css/estilos-tabla.css">  
+      <link rel="stylesheet" href="css/styles.css">
   <title>Cinema</title>
 </head>
 
 <body>
 
   <!-- Navbar  -->
-  <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top mt-10 ">
-    <div class="container">
-      <a href="index.php">
-        <img class="logo" src="img/Logo.png" alt="">
-      </a>
+  <section class="pb-4">
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top mt-10">
+      <div class="container">
+        <a href="index.php">
+          <img class="logo" src="img/Logo.png" alt="">
+        </a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
-        <span class="navbar-toggler-icon "></span>
-      </button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+          <span class="navbar-toggler-icon "></span>
+        </button>
 
-      <div class="collapse navbar-collapse" id="navmenu">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a href="index.php" class="nav-link">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a href="pelicula.php" class="nav-link">Películas</a>
-          </li>
-          <li class="nav-item">
-            <a href="nosotros.php" class="nav-link">Nosotros</a>
-          </li>
-          <!--Dropdown-->
-          <?php if (
-                isset($_SESSION["login"]) &&
-                strcmp($_SESSION["rol"], "admin") == 0
-          ) { ?>
+        <div class="collapse navbar-collapse" id="navmenu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a href="index.php" class="nav-link">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a href="pelicula.php" class="nav-link">Películas</a>
+            </li>
+            <li class="nav-item">
+              <a href="nosotros.php" class="nav-link">Nosotros</a>
+            </li>
+              <!--Dropdown-->
+              <?php if (
+                    isset($_SESSION["login"]) &&
+                    strcmp($_SESSION["rol"], "admin") == 0
+              ) { ?>
 
-          <div class="container-fluid">
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Administración
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="adm_banners.php">Administración de Banners</a></li>
-                       
-                        <li><a class="dropdown-item" href="adm_peliculas.php">Administración de Peliculas</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="adm_horarios.php">Administración de Horarios</a></li>
-                   
-                        <li><a class="dropdown-item" href="adm_salas.php">Administracion de Salas</a></li>
-                        </ul>
-                    </li>
-                </ul>
+              <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Administración
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="adm_banners.php">Administración de Banners</a></li>
+                          
+                            <li><a class="dropdown-item" href="adm_peliculas.php">Administración de Peliculas</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="adm_horarios.php">Administración de Horarios</a></li>
+                      
+                            <li><a class="dropdown-item" href="adm_salas.php">Administracion de Salas</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
             </div>
+      
+          <?php } ?>
+          <!--Dropdown-->
+          </ul>
+          <?php if (!isset($_SESSION["login"])) { ?>
+            <li>
+              <a href="login.php" class="nav-link--button">Iniciar Sesión</a>
+            </li>
+            <?php } ?>
+            <?php if (isset($_SESSION["login"])) { ?>
+                <li class="nav-item"><a class="nav-link" href="logout.php">Salir</a></li>
+            <?php } ?>
+            <?php if (isset($_SESSION["login"])) { ?>
+                <li><a id="linkUsr" href=""><img class="imgUsr" src="img/usuarios/<?php echo $_SESSION["usuario"] ?>.jpg" alt=""></a></li>
+            <?php } ?>
         </div>
-
-        <?php } ?>
-        <!--Dropdown-->
-        </ul>
-        <?php if (!isset($_SESSION["login"])) { ?>
-          <li>
-            <a href="login.php" class="nav-link--button">Iniciar Sesión</a>
-          </li>
-          <?php } ?>
-          <?php if (isset($_SESSION["login"])) { ?>
-              <li class="nav-item"><a class="nav-link" href="logout.php">Salir</a></li>
-          <?php } ?>
-          <?php if (isset($_SESSION["login"])) { ?>
-              <li><a id="linkUsr" href=""><img class="imgUsr" src="img/usuarios/<?php echo $_SESSION["usuario"] ?>.jpg" alt=""></a></li>
-          <?php } ?>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </section>

@@ -29,10 +29,10 @@ ob_start();
   <!--.seccion cartelera-->
   <main class=" container cartelera">
     <h3 class="propiedades__heading">En Cartelera</h3>
-    
-    <?php echo $clase_pelicula->crearImagenesCartelera(); ?>
-
+    <div class="d-flex flex-row gap-3" >
+        <?php echo $clase_pelicula->crearImagenesCartelera(); ?>
     </div>
+    
   </main>
   <!--.cartelera-->
 
