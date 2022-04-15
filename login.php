@@ -5,7 +5,7 @@ $clase_login = new clsLogin();
 
 ?>
     <main class="container">
-        <div class="administracion">
+        <div class="administracion mb-30">
             <h1 class="">Iniciar Sesión</h1>
 
             <form class="w-40 m-auto" action="" method="POST">
