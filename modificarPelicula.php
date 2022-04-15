@@ -7,7 +7,7 @@ ob_start();
 ?>
   <form class="container w-40 m-auto" action="" method="POST" enctype="multipart/form-data">
 
-    <div class="administracion">
+    <div class="administracion mb-30">
 
       <h1 class="administracion__heading">Administracion de Películas</h1>
       

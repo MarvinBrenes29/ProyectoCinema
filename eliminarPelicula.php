@@ -15,7 +15,7 @@ if($_POST){
 ?>
 
 <main>
-    <div class="d-flex flex-column container mt-5 pt-5">
+    <div class="d-flex flex-column container mb-30 pt-5">
         <h1 class="p-2 bd-highlight">Esta Seguro que quiere eliminar este Registro?</h1>
         <h2 class="p-2 bd-highlight">Los datos no se podrán recuperar</h2>
         <div class="p-2 bd-highlight">
