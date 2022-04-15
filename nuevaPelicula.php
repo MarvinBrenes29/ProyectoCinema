@@ -126,4 +126,5 @@ ob_start();
 
 <?php
 include "shared/footer.php";
+
 ?>
