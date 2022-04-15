@@ -1,6 +1,7 @@
 <?php
 require "conexion.php";
 
+
 class clsAdm_peliculas extends clsConexion{
 
      //atributos
@@ -84,36 +85,6 @@ class clsAdm_peliculas extends clsConexion{
     }
 
 
-    public function insertar_horario($adm_pelicula_idpelicula_parametro, $fecha_parametro, $hora_parametro, $tipo_sala_parametro, $precio_parametro) {
-
-        $dbh = $this->conectar();
-        if ($dbh != null) {
-            try {
-                //Consulta
-                $consulta_login = $dbh->prepare("INSERT INTO adm_horario (fecha, hora, tipo_sala, precio, adm_pelicula_idpelicula) VALUES(:fecha, :hora, :tipo_sala, :precio, :adm_pelicula_idpelicula)");
-
-                //Agregar Parametros
-                $consulta_login->bindParam(":fecha", $fecha_parametro);
-                $consulta_login->bindParam(":hora", $hora_parametro);
-                $consulta_login->bindParam(":tipo_sala", $tipo_sala_parametro);
-                $consulta_login->bindParam(":precio", $precio_parametro);
-                $consulta_login->bindParam(":adm_pelicula_idpelicula", $adm_pelicula_idpelicula_parametro);
-
-
-                // Ejecutar
-                $consulta_login->execute();
-                $estado = true;
-                echo "se ingresaron los datos";
-            } catch (PDOException $e) {
-                $estado = false;
-                $e->getMessage();
-                echo 'Lo sentimos, nos encontramos teniendo inconvenientes';
-            } finally {
-                $dbh = null;
-                return $estado;
-            }
-        }
-    }
 
         public function verificar_siexite_pelicula($idpelicula_parametro){
             $dbh = $this->conectar();
@@ -144,33 +115,34 @@ class clsAdm_peliculas extends clsConexion{
         public function crearImagenesCartelera(){
             $dbh = $this->conectar();
             if ($dbh != null) {
-                $consulta = $dbh->prepare("SELECT idpelicula FROM adm_pelicula");
+                $consulta = $dbh->prepare("SELECT idpelicula, estado FROM adm_pelicula");
                 //determinar el motos de fetch
                 $consulta->setFetchMode(PDO::FETCH_ASSOC); //resultado como un arreglo asociativo
                 $consulta->execute();
                 $filas = "";
 
                 foreach ($consulta as $key => $v) {
-                    // .= es para concatenar
-                    $filas .= "
-                            <div class='pelicula' type='submit'>
-                                <a href='detallePelicula.php?pelicula=$v[idpelicula]'>
-                                        <img src='img/peliculas/$v[idpelicula].jpg'>
-                                </a>
-                            </div>
-                    ";
+                    if($v["estado"] != 0){
+                        $filas .= "
+                                <div class='pelicula' type='submit'>
+                                    <a href='detallePelicula.php?pelicula=$v[idpelicula]'>
+                                            <img src='img/peliculas/$v[idpelicula].jpg'>
+                                    </a>
+                                </div>
+                        ";
+                    }
                 }
                 $dbh=null;
                 return $filas;
+            }
         }
-    }
 
 
-    // Esto aun esta en proceso para colocarlo en detallePelicula
-    public function seleccionarDatosPelicula($idpelicula){
+    
+    public function seleccionarDatosPelicula(){
         $dbh = $this->conectar();
         if ($dbh != null) {
-            $consulta = $dbh->prepare("SELECT idpelicula FROM adm_pelicula");
+            $consulta = $dbh->prepare("SELECT idpelicula, estado FROM adm_pelicula");
             //determinar el motos de fetch
             $consulta->setFetchMode(PDO::FETCH_ASSOC); 
             $consulta->execute();
@@ -178,13 +150,14 @@ class clsAdm_peliculas extends clsConexion{
 
             foreach ($consulta as $key => $v) {
                 
-                $filas .= "
-                            <a href='detallePelicula.php?pelicula=$v[idpelicula]'>
-                                <div class='pelicula' type='submit'>
-                                    <img src='img/peliculas/$v[idpelicula].jpg'>
-                                </div>
-                            </a>
-                ";
+                    $filas .= "
+                                <a href='detallePelicula.php?pelicula=$v[idpelicula]'>
+                                    <div class='pelicula' type='submit'>
+                                        <img src='img/peliculas/$v[idpelicula].jpg'>
+                                    </div>
+                                </a>
+                    ";
+                
             }
             $dbh=null;
             return $filas;
@@ -248,6 +221,7 @@ public function crearFilasPeliculas(){
         if ($dbh != null) {
             try {
                 
+                $this->eliminarHorarioxPelicula($this->idpelicula);
 
                 $consulta = $dbh->prepare("DELETE FROM adm_pelicula 
                                             WHERE idpelicula = :idpelicula");
@@ -437,9 +411,12 @@ public function crearFilasPeliculas(){
 
     public function eliminar_sala($nombreSala){
 
+        $this->eliminarHorarioxSala($nombreSala);
+
         $dbh = $this->conectar();
         if ($dbh != null) {
             try {
+                
                 
 
                 $consulta = $dbh->prepare("DELETE FROM adm_sala
@@ -460,6 +437,351 @@ public function crearFilasPeliculas(){
                 //cerrar la conexion a la bd
                 $dbh = null;
                 return $estado;
+            }
+        }
+    }
+
+    // --------------------------------------------------------------------horario
+
+    public function crearFilasHorario(){
+
+        $dbh = $this->conectar();
+        if ($dbh != null) {
+            $consulta = $dbh->prepare("SELECT fecha, hora, precio, adm_pelicula_idpelicula, adm_sala_nombreSala, idhorario FROM adm_horario");
+            //determinar el motos de fetch
+            $consulta->setFetchMode(PDO::FETCH_ASSOC); 
+            $consulta->execute();
+            $filas = "";
+
+            foreach ($consulta as $key => $v) {
+                // .= es para concatenar
+                $filas .= "<tr>
+                                <td scope='col'>$v[idhorario]</td>
+                                <td scope='col'>$v[adm_pelicula_idpelicula]</td>
+                                <td scope='col'>$v[fecha]</td>
+                                <td scope='col'>$v[hora]</td>
+                                <td scope='col'>$v[adm_sala_nombreSala]</td>
+                                <td scope='col'>$v[precio]</td>
+
+                                <td scope='col'>
+                                    <a href='modificarHorario.php?idhorario=$v[idhorario]' class='btn btn-warning'><i class='fas fa-pencil-alt'></i></a>
+                                    <a href='eliminarHorario.php?idhorario=$v[idhorario]' class='btn btn-danger'><i class='fas fa-trash-alt'></i></a>
+                                </td>
+                            </tr>";
+            }
+            $dbh=null;
+            return $filas;
+        }
+    }
+
+    public function insertar_horario($idpelicula_parametro, $idSala_parametro, $fecha_parametro, $hora_parametro, $precio_parametro, $idhorario_parametro) {
+        
+
+        $dbh = $this->conectar();
+        if ($dbh != null) {
+            try {
+                
+                $consulta_login = $dbh->prepare("INSERT INTO adm_horario (fecha, hora, precio, adm_pelicula_idpelicula, adm_sala_nombreSala, idhorario) VALUES(:fecha, :hora, :precio, :adm_pelicula_idpelicula, :adm_sala_nombreSala, :idhorario)");
+
+                
+                $consulta_login->bindParam(":fecha", $fecha_parametro);
+                $consulta_login->bindParam(":hora", $hora_parametro);
+                $consulta_login->bindParam(":precio", $precio_parametro);
+                $consulta_login->bindParam(":adm_pelicula_idpelicula", $idpelicula_parametro);
+                $consulta_login->bindParam(":adm_sala_nombreSala", $idSala_parametro);
+                $consulta_login->bindParam(":idhorario", $idhorario_parametro);
+
+
+                
+                $consulta_login->execute();
+                $estado = true;
+                echo "se ingresaron los datos";
+            } catch (PDOException $e) {
+                $estado = false;
+                $e->getMessage();
+                echo 'Lo sentimos, nos encontramos teniendo inconvenientes';
+            } finally {
+                $dbh = null;
+                return $estado;
+            }
+        }
+    }
+
+    public function modificar_horario($idpelicula_parametro, $idSala_parametro, $fecha_parametro, $hora_parametro, $precio_parametro, $idhorario_parametro){
+
+        $dbh = $this->conectar();
+        if ($dbh != null) {
+            try {
+                
+
+                $consulta = $dbh->prepare("UPDATE adm_horario SET fecha=:fecha, hora=:hora, precio=:precio, adm_pelicula_idpelicula=:adm_pelicula_idpelicula, adm_sala_nombreSala=:adm_sala_nombreSala WHERE idhorario=:idhorario");
+
+                
+                $consulta->bindParam(":fecha", $fecha_parametro);
+                $consulta->bindParam(":hora", $hora_parametro);
+                $consulta->bindParam(":precio", $precio_parametro);
+                $consulta->bindParam(":adm_pelicula_idpelicula", $idpelicula_parametro);
+                $consulta->bindParam(":adm_sala_nombreSala", $idSala_parametro);
+                $consulta->bindParam(":idhorario", $idhorario_parametro);
+
+                
+                $consulta->execute();
+                $estado = true;
+            } catch (PDOException $e) {
+                $estado = false;
+                $e->getMessage();
+            } finally {
+                $dbh = null;
+                return $estado;
+            }
+        }
+    }
+
+    public function eliminar_horario($idhorario_parametro){
+
+        $dbh = $this->conectar();
+        if ($dbh != null) {
+            try {
+                
+
+                $consulta = $dbh->prepare("DELETE FROM adm_horario
+                                            WHERE idhorario = :idhorario");
+
+               
+                $consulta->bindParam(":idhorario", $idhorario_parametro);
+
+                
+                $consulta->execute();
+                $estado = true;
+                
+            } catch (PDOException $e) {
+                $estado = false;
+                $e->getMessage();
+                echo $e;
+            } finally {
+                //cerrar la conexion a la bd
+                $dbh = null;
+                
+                return $estado;
+            }
+        }
+    }
+
+    // ------------------------------------------------------Banner
+
+    public function insertar_banner($idbanner_parametro, $titulo_parametro, $fecha_parametro, $estado_parametro) {
+
+        $dbh = $this->conectar();
+        if ($dbh != null) {
+            try {
+                
+                $consulta_login = $dbh->prepare("INSERT INTO adm_banner(idbanner, titulo, fecha_publicacion, estado) VALUES(:idbanner, :titulo, :fecha_publicacion, :estado)");
+
+                
+                $consulta_login->bindParam(":idbanner", $idbanner_parametro);
+                $consulta_login->bindParam(":titulo", $titulo_parametro);
+                $consulta_login->bindParam(":fecha_publicacion", $fecha_parametro);
+                $consulta_login->bindParam(":estado", $estado_parametro);
+
+
+                
+                $consulta_login->execute();
+                $estado = true;
+                echo "se ingresaron los datos";
+            } catch (PDOException $e) {
+                $estado = false;
+                $e->getMessage();
+                echo 'Lo sentimos, nos encontramos teniendo inconvenientes';
+            } finally {
+                $dbh = null;
+                return $estado;
+            }
+        }
+    }
+
+    public function verificar_siexite_banner($idbanner_parametro){
+        $dbh = $this->conectar();
+        if ($dbh != null) {
+            $condicion = false;
+            $consulta = $dbh->prepare("SELECT idbanner FROM adm_banner where idbanner = :idbanner");
+            
+            $consulta->bindParam(":idbanner", $idbanner_parametro);
+
+            // Conseguir arreglo asociativo
+            $consulta->setFetchMode(PDO::FETCH_ASSOC);
+            $consulta->execute();
+
+            $contador = $consulta -> rowCount();
+
+            if($contador==1){
+                $condicion = true;
+            }
+            
+            }
+            $dbh=null;
+            
+            // Si el usuario exite entonces enviar true, caso contrario false
+            return $condicion;
+        }
+
+        public function crearFilasBanner(){
+
+            $dbh = $this->conectar();
+            if ($dbh != null) {
+                $consulta = $dbh->prepare("SELECT idbanner, titulo, fecha_publicacion, estado FROM adm_banner");
+                //determinar el motos de fetch
+                $consulta->setFetchMode(PDO::FETCH_ASSOC); 
+                $consulta->execute();
+                $filas = "";
+                
+                foreach ($consulta as $key => $v) {
+                    // .= es para concatenar
+                    $filas .= "<tr>
+                                    <td scope='col' ><img class='crudbanner' src='img/banners/$v[idbanner].jpg' alt=''></td>
+                                    <td scope='col'>$v[idbanner]</td>
+                                    <td scope='col'>$v[titulo]</td>
+                                    <td scope='col'>$v[fecha_publicacion]</td>
+                                    <td scope='col'>$v[estado]</td>
+    
+                                    <td scope='col'>
+                                        <a href='modificarBanner.php?idbanner=$v[idbanner]' class='btn btn-warning'><i class='fas fa-pencil-alt'></i></a>
+                                        <a href='eliminarBanner.php?idbanner=$v[idbanner]' class='btn btn-danger'><i class='fas fa-trash-alt'></i></a>
+                                    </td>
+                                </tr>";
+                }
+                $dbh=null;
+                return $filas;
+            }
+        }
+
+        public function crearImagenesBanner(){
+            $dbh = $this->conectar();
+            if ($dbh != null) {
+                $consulta = $dbh->prepare("SELECT idbanner, estado FROM adm_banner");
+                
+                $consulta->setFetchMode(PDO::FETCH_ASSOC); 
+                $consulta->execute();
+                $filas = "";
+
+                foreach ($consulta as $key => $v) {
+
+                    if($v["estado"] != 0){
+
+                        $filas .= "
+                            <li class='slider__slide'>
+                                <img class='slider__imagen' src='img/banners/$v[idbanner].jpg' alt=''>
+                            </li>
+                        ";
+
+                    }
+                }
+                $dbh=null;
+                return $filas;
+            }
+        }
+
+        public function modificar_banner($idbanner_parametro, $titulo_parametro, $fecha_parametro, $estado_parametro){
+
+            $dbh = $this->conectar();
+            if ($dbh != null) {
+                try {
+                    
+    
+                    $consulta = $dbh->prepare("UPDATE adm_banner SET titulo=:titulo, fecha_publicacion=:fecha_publicacion, estado=:estado WHERE idbanner=:idbanner");
+    
+                    
+                    $consulta->bindParam(":titulo", $titulo_parametro);
+                    $consulta->bindParam(":fecha_publicacion", $fecha_parametro);
+                    $consulta->bindParam(":estado", $estado_parametro);
+                    $consulta->bindParam(":idbanner", $idbanner_parametro);
+    
+                    
+                    $consulta->execute();
+                    $estado = true;
+                } catch (PDOException $e) {
+                    $estado = false;
+                    $e->getMessage();
+                } finally {
+                    $dbh = null;
+                    return $estado;
+                }
+            }
+        }
+
+        public function eliminar_banner($idbanner_parametro){
+
+            $dbh = $this->conectar();
+            if ($dbh != null) {
+                try {
+                    
+    
+                    $consulta = $dbh->prepare("DELETE FROM adm_banner 
+                                                WHERE idbanner = :idbanner");
+    
+                   
+                    $consulta->bindParam(":idbanner", $idbanner_parametro);
+    
+                    
+                    $consulta->execute();
+                    $estado = true;
+                    if(file_exists('img/banners/'.$idbanner_parametro.'.jpg')){
+                        unlink('img/banners/'.$idbanner_parametro.'.jpg');
+                    }
+                } catch (PDOException $e) {
+                    $estado = false;
+                    $e->getMessage();
+                    echo $e;
+                } finally {
+                    //cerrar la conexion a la bd
+                    $dbh = null;
+                    return $estado;
+                }
+            }
+        }
+// ---------------------------------------------------------------------------Eliminar por defecto
+
+    public function eliminarHorarioxPelicula($idpelicula){
+
+        $dbh = $this->conectar();
+        if ($dbh != null) {
+            $consulta = $dbh->prepare("SELECT adm_pelicula_idpelicula, idhorario FROM adm_horario where adm_pelicula_idpelicula = $idpelicula");
+            
+
+
+            $consulta->setFetchMode(PDO::FETCH_ASSOC); 
+            $consulta->execute();
+
+            foreach ($consulta as $key => $v) {
+
+                    $this->eliminar_horario($v["idhorario"] );           
+
+            }
+            $dbh=null;
+        }
+    }
+
+    public function eliminarHorarioxSala($nombreSala){
+
+        $dbh = $this->conectar();
+        if ($dbh != null) {
+            $consulta = $dbh->prepare("SELECT adm_sala_nombreSala, idhorario FROM adm_horario where adm_sala_nombreSala = $nombreSala");
+            
+            try{
+
+                $consulta->setFetchMode(PDO::FETCH_ASSOC); 
+                $consulta->execute();
+
+                foreach ($consulta as $key => $v) {
+
+                    $this->eliminar_horario($v["idhorario"] );           
+
+                }
+
+            }catch(PDOException $e){
+                $e->getMessage();
+                echo $e;
+            }finally{
+                $dbh=null;
             }
         }
     }

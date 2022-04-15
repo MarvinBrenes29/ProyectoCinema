@@ -13,13 +13,7 @@ ob_start();
         <img class="slider__imagen" src="img/Venom.jpg" alt="venom">
       </li>
 
-      <li class="slider__slide">
-        <img class="slider__imagen" src="img/Venom.jpg" alt="venom">
-      </li>
-
-      <li class="slider__slide">
-        <img class="slider__imagen" src="img/Venom.jpg" alt="venom">
-      </li>
+      <?php echo $clase_pelicula->crearImagenesBanner(); ?>
 
     </ul>
     <!--.slider_contenedor-->

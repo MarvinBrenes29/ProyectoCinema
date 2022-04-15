@@ -1,12 +1,8 @@
 <?php
 include "shared/header.php";
 require "model/clsAdm_peliculas.php";
-require "model/clsSillas.php";
-
 $clase_pelicula = new clsAdm_peliculas();
-$sillas = new clsSillas();
-
-
+$idhorario = $_GET["idhorario"];
 ob_start();
 ?>
 
@@ -15,10 +11,6 @@ ob_start();
   
       <h1 class="administracion__heading">Administracion de Horarios</h1>
 
-      <div class="form-floating mb-3">
-        <input type="text" class="form-control" name="idhorario" id="idhorario" placeholder="">
-        <label for="">ID Horario</label>
-      </div>
 
 
       <div class="form-floating mb-3">
@@ -52,7 +44,7 @@ ob_start();
 
       <div class="adm__botones">
          <button type="submit" class="btn btn-primary btn-lg">Guardar</button>
-      <a class="btn btn-success btn-lg" href="adm_horarios.php">Regresar</a>
+      <a class="btn btn-success btn-lg" href="index.php">Regresar</a>
       </div>
    
 
@@ -68,7 +60,6 @@ ob_start();
         $fecha = $_POST["fecha"];
         $hora = $_POST["hora"];
         $precio = $_POST["precio"];
-        $idhorario = $_POST["idhorario"];
       
 
         $condicion_pelicula = false;
@@ -83,11 +74,9 @@ ob_start();
             if ($condicion_sala == true) {
 
               
-                $condicion_horario = $clase_pelicula->insertar_horario($idpelicula, $idSala, $fecha, $hora, $precio, $idhorario);
+                $clase_pelicula->modificar_horario($idpelicula, $idSala, $fecha, $hora, $precio, $idhorario);
                 
-                if($condicion_horario == true){
-                  // $sillas->crear_sillas($idhorario);
-                }
+
 
                 // header("Location: login.php");
 
