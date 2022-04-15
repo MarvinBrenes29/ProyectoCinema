@@ -49,54 +49,57 @@
       </div>
 
       <div class="row">
-        <div class="seat"></div>
-        <div class="seat"></div>
-        <div class="seat"></div>
-        <div class="seat sold"></div>
-        <div class="seat sold"></div>
-        <div class="seat"></div>
-        <div class="seat"></div>
-        <div class="seat"></div>
+        <div data-index="B1" class="seat"></div>
+        <div data-index="B2" class="seat"></div>
+        <div data-index="B3" class="seat"></div>
+        <div data-index="B4" class="seat sold"></div>
+        <div data-index="B5" class="seat sold"></div>
+        <div data-index="B6" class="seat"></div>
+        <div data-index="B7" class="seat"></div>
+        <div data-index="B8" class="seat"></div>
+      </div>
+
+      <div class="row">
+        <div data-index="C1" class="seat"></div>
+        <div data-index="C2" class="seat"></div>
+        <div data-index="C3" class="seat"></div>
+        <div data-index="C4" class="seat"></div>
+        <div data-index="C5" class="seat"></div>
+        <div data-index="C6" class="seat"></div>
+        <div data-index="C7" class="seat"></div>
+        <div data-index="C8" class="seat sold"></div>
+      </div>
+
+      <div class="row">
+        <div data-index="D1" class="seat"></div>
+        <div data-index="D2" class="seat"></div>
+        <div data-index="D3" class="seat"></div>
+        <div data-index="D4" class="seat"></div>
+        <div data-index="D5" class="seat"></div>
+        <div data-index="D6" class="seat"></div>
+        <div data-index="D7" class="seat"></div>
+        <div data-index="D8" class="seat"></div>
       </div>
       <div class="row">
-        <div class="seat"></div>
-        <div class="seat"></div>
-        <div class="seat"></div>
-        <div class="seat"></div>
-        <div class="seat"></div>
-        <div class="seat"></div>
-        <div class="seat"></div>
-        <div class="seat sold"></div>
+        <div data-index="E1" class="seat"></div>
+        <div data-index="E2" class="seat"></div>
+        <div data-index="E3" class="seat"></div>
+        <div data-index="E4" class="seat sold"></div>
+        <div data-index="E5" class="seat sold"></div>
+        <div data-index="E6" class="seat"></div>
+        <div data-index="E7" class="seat"></div>
+        <div data-index="E8" class="seat"></div>
       </div>
+
       <div class="row">
-        <div class="seat"></div>
-        <div class="seat"></div>
-        <div class="seat"></div>
-        <div class="seat"></div>
-        <div class="seat"></div>
-        <div class="seat"></div>
-        <div class="seat"></div>
-        <div class="seat"></div>
-      </div>
-      <div class="row">
-        <div class="seat"></div>
-        <div class="seat"></div>
-        <div class="seat"></div>
-        <div class="seat sold"></div>
-        <div class="seat sold"></div>
-        <div class="seat"></div>
-        <div class="seat"></div>
-        <div class="seat"></div>
-      </div>
-      <div class="row">
-        <div class="seat"></div>
-        <div class="seat"></div>
-        <div class="seat"></div>
-        <div class="seat"></div>
-        <div class="seat sold"></div>
-        <div class="seat sold"></div>
-        <div class="seat sold"></div>
-        <div class="seat"></div>
+        <div data-index="F1" class="seat"></div>
+        <div data-index="F2" class="seat"></div>
+        <div data-index="F3" class="seat"></div>
+        <div data-index="F4" class="seat"></div>
+        <div data-index="F5" class="seat sold"></div>
+        <div data-index="F6" class="seat sold"></div>
+        <div data-index="F7" class="seat sold"></div>
+        <div data-index="F8" class="seat"></div>
       </div>
     </div>
 
