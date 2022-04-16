@@ -7,7 +7,7 @@ ob_start();
 
 <main class="mt-5">
  
-        <div class="container mb-5">
+        <div class="container mb-30">
             <div class="bd-highlight mb-2 pb-5 row">
 
                 <div class="mt-5 pt-5 bd-highlight col">

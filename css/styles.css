@@ -18,6 +18,8 @@ html {
 }
 
 body {
+  font-family: "Poppins", sans-serif;
+  background-color: #FBFCFE;
   font-size: 1.6rem;
   line-height: 1.2;
 }
@@ -44,6 +46,13 @@ img {
   display: block;
 }
 
+/*Utilidades*/
+
+.mb-30{
+  margin-bottom: 40rem;
+
+}
+
 .header {
   min-width: 100rem;
   background-image: url(../img/Venom.jpg);
@@ -53,10 +62,7 @@ img {
   padding: 2rem;
 }
 
-body {
-  font-family: "Poppins", sans-serif;
-  background-color: #FBFCFE;
-}
+
 
 .contenedor {
   max-width: 1050px;
