@@ -1,5 +1,8 @@
 <?php
 include "shared/header.php";
+require "model/clsSillas.php";
+$sillas = new clsSillas();
+$usuario = $_SESSION['usuario'];
 ?>
 
 <main>
@@ -13,27 +16,14 @@ include "shared/header.php";
       <th scope="col"># Orden de compra</th>
       <th scope="col">Película</th>
       <th scope="col">Fecha</th>
-      <th scope="col">Cantidad</th>
+      <th scope="col">Hora</th>
+      <th scope="col">Asientos</th>
+      <th scope="col">Monto Pagado</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th scope="row">1</th>
-      <td>#</td>
-      <td>#</td>
-      <td>#</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td># </td>
-      <td>#</td>
-      <td>#</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>#</td>
-      <td>#</td>
-      <td>#</td>
+      <?php echo $sillas->crearFilasCompra($usuario) ?>
     </tr>
   </tbody>
 </table>

@@ -16,11 +16,20 @@ $longitud = count($vector);
 for($i=0; $i<$longitud; $i++){
 
     $sillas->insertar_asiento($vector[$i], $idhorario);
-    echo 'si entro'.$i;
 }
 
 
-$sillas->insertar_compra($usuario, $idpelicula, $idhorario, $montoEntradas, $comboEntrada);
+$nombrePelicula = $sillas->obtenerPelicula($idpelicula);
+
+$nombreHora = $sillas->obtenerHora($idhorario);
+
+$nombreFecha = $sillas->obtenerFecha($idhorario);
+
+
+
+
+
+$sillas->insertar_compra($montoEntradas, $comboEntrada, $nombrePelicula, $nombreFecha, $nombreHora, $usuario);
 
 
 
