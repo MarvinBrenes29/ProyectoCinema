@@ -66,14 +66,27 @@ container.addEventListener("click", (e) => {
 });
 
 function enviar_datos(){
-    console.log("entre");
     let seleccionado = document.querySelectorAll(".container .seat.selected");
-    console.log(seleccionado);
-    seleccionado.forEach((elemento)=>{
-      console.log(elemento.dataset.index);
-    });
 
     
+    let vector = [];
+    seleccionado.forEach((elemento)=>{
+      valor = elemento.dataset.index;
+      console.log(valor);
+      vector.push(valor);
+    });
+    if(vector.length > 0){
+      let src="compraEntradasFinal.php?entrada="+vector;
+      window.location=src;
+    }else{
+      Swal.fire(
+        'Error!',
+        'Debe de ingresar al menos un asiento',
+        'error'
+      );
+    }
+    
+      
 }
 
 

@@ -2,6 +2,8 @@
 include "shared/header.php";
 require "model/clsAdm_peliculas.php";
 $clase_pelicula = new clsAdm_peliculas();
+unset($_SESSION['idhorario']);
+unset($_SESSION['vector']);
 ob_start();
 ?>
 

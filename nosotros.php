@@ -1,5 +1,6 @@
 <?php
 include "shared/header.php";
+unset($_SESSION['idhorario']);
 ?>
 
 
