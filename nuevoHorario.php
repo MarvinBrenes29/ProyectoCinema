@@ -1,10 +1,8 @@
 <?php
 include "shared/header.php";
 require "model/clsAdm_peliculas.php";
-require "model/clsSillas.php";
 
 $clase_pelicula = new clsAdm_peliculas();
-$sillas = new clsSillas();
 
 
 ob_start();

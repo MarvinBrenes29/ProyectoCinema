@@ -1,5 +1,7 @@
 <?php
 include "shared/header.php";
+unset($_SESSION['idhorario']);
+unset($_SESSION['vector']);
 ?>
 
 <main>
