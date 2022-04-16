@@ -9,6 +9,8 @@ $_SESSION['comboentrada'] = $_GET['entrada'];
 $_SESSION['vector'] = $vectorEntradas;
 $idhorario = $_SESSION['idhorario'];
 
+// echo $idhorario;
+
 ?>
 
 
@@ -18,6 +20,7 @@ $idhorario = $_SESSION['idhorario'];
         <h1 class="display-4 pt-5 mx-5">Paso Final</h1>
         <h1 class="display-6">
         <?php
+        echo $idhorario;
             if(isset($_GET['entrada'])){
                 $conteoEntradas = count($vectorEntradas);
 
@@ -58,7 +61,7 @@ $idhorario = $_SESSION['idhorario'];
 
         <!-- <button type="submit" class="btn btn-primary mx-5">Comprar</button> -->
         <!-- <button type="buttom" class="btn btn-primary mx-5">Comprar</button> -->
-        <a href='compra.php' role='button'>Comprar</a>
+        <a href='compra.php?idhorario=<?php $idhorario ?>' role='button'>Comprar</a>
     </form>
 
 

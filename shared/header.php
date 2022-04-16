@@ -83,11 +83,38 @@
                         </li>
                     </ul>
                 </div>
-            </div>
+          </div>
+            <?php } ?>
+<!-- ---------------------------------------------------------------------- -->
+              <?php if (isset($_SESSION["login"])) { ?> 
+                          <div class="container-fluid">
+                              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                      <li class="nav-item dropdown">
+                                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                          Configuracion
+                                          </a>
+                                          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                          <li><a class="dropdown-item" href="historial_compra.php">Historial de Compras</a></li>
+                                          </ul>
+                                      </li>
+                                  </ul>
+                              </div>
+                          </div>
+              <?php } ?>
+<!-- ---------------------------------------------------------------------- -->
       
-          <?php } ?>
+          
+
+               
+
+
+
+
+
+          
           <!--Dropdown-->
-          </ul>
+          
           <?php if (!isset($_SESSION["login"])) { ?>
             <li>
               <a href="login.php" class="nav-link--button">Iniciar Sesión</a>
@@ -97,8 +124,9 @@
                 <li class="nav-item"><a class="nav-link" href="logout.php">Salir</a></li>
             <?php } ?>
             <?php if (isset($_SESSION["login"])) { ?>
-                <li><a id="linkUsr" href=""><img class="imgUsr" src="img/usuarios/<?php echo $_SESSION["usuario"] ?>.jpg" alt=""></a></li>
+                <li class="nav-item"><a id="linkUsr" class="nav-link" href=""><img class="imgUsr" src="img/usuarios/<?php echo $_SESSION["usuario"] ?>.jpg" alt=""></a></li>
             <?php } ?>
+            </ul>
         </div>
       </div>
     </nav>
