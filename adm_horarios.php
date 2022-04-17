@@ -11,7 +11,7 @@ ob_start();
             <div class="bd-highlight mb-2 pb-5 row">
 
                 <div class="bd-highlight col">
-                        <h2 class="adm__heading">Administracion de horarios</h2>
+                        <h2 class="adm__heading">Administración de horarios</h2>
                 </div>
                         
                 <div class="p-5 bd-highlight">
