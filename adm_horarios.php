@@ -5,13 +5,13 @@ $clase_pelicula = new clsAdm_peliculas();
 ob_start();
 ?>
 
-<main class="mt-5">
+<main class="adm">
  
-        <div class="container mb-30">
+        <div class="container mb-70">
             <div class="bd-highlight mb-2 pb-5 row">
 
-                <div class="mt-5 pt-5 bd-highlight col">
-                        <h2>Administracion de horarios</h2>
+                <div class="bd-highlight col">
+                        <h2 class="adm__heading">Administracion de horarios</h2>
                 </div>
                         
                 <div class="p-5 bd-highlight">
