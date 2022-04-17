@@ -125,7 +125,7 @@ img {
 
 .slider__imagen {
   width: 100%;
-  margin-top: 1rem;
+  max-height: 50rem;
 }
 
 .swiper-button-next,
@@ -628,7 +628,35 @@ color: white;
   }
 }
 
+.login__title{
+  color: #0288d1;
+  font-weight: bold;
+  font-size: 2.2rem;
+}
+
+.login__grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr)
+}
+.account-block {
+  padding: 0;
+  background-image: url(https://bootdey.com/img/Content/bg1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  position: relative;
+}
 /*-ERROR-*/
+.account-block .account-testimonial {
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  margin: 0 auto;
+  padding: 0 1.75rem;
+  bottom: 3rem;
+  left: 0;
+  right: 0;
+}
 
 .border-red {
   border: 1px solid var(--primario);
@@ -784,6 +812,9 @@ height: 50rem;
 .historial__heading{
   margin-bottom: 5rem;
 }
+
+/*Login*/
+
 
 /**footer**/
 .footer {

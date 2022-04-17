@@ -35,6 +35,10 @@ unset($_SESSION['idhorario']);
      
       <div id="containerMapa">
         <div id="map" class="mx-auto"></div>
+
+
+
+        
       </div>
       
   <!--Fin elemento Contenido-->
