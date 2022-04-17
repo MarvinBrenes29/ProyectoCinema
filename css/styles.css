@@ -677,6 +677,7 @@ color: white;
   height: 100%;
   position: relative;
 }
+
 /*-ERROR-*/
 .account-block .account-testimonial {
   text-align: center;
@@ -838,7 +839,6 @@ height: 50rem;
 
 .modificar{
   margin-top: 15rem;
-  margin-bottom: 45rem;
 }
 .historial__heading{
   margin-bottom: 5rem;
