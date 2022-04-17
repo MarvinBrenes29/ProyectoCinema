@@ -47,7 +47,19 @@ img {
 }
 
 /*Utilidades*/
+.mt-10{
+  margin-top: 10rem;
+}
+.mb-10{
+  margin-bottom: 10rem;
+}
 
+.mt-20{
+  margin-top: 20rem;
+}
+.mb-20{
+  margin-bottom: 20rem;
+}
 .mb-30{
   margin-bottom: 40rem;
 
@@ -56,6 +68,12 @@ img {
   margin-top: 30rem;
 }
 
+.mt-70{
+  margin-top: 70rem;
+}
+.mb-70{
+  margin-bottom: 70rem;
+}
 .header {
   min-width: 100rem;
   background-image: url(../img/Venom.jpg);
@@ -814,7 +832,51 @@ height: 50rem;
 }
 
 /*Login*/
+.bg-payment{
+  background-image: url(https://wallpaperaccess.com/full/895231.jpg);
+  height: 50rem;
+}
+.card{
+  height: 50rem;
 
+}
+
+.adm__heading{
+  color: #0288d1;
+  font-weight: bold;
+  text-align: center;
+  font-size: 2.4rem;
+}
+
+@media (min-width: 768px){
+  .adm__heading{
+    font-size: 3.2rem;
+  }
+}
+
+.adm__heading::after {
+  background-image: linear-gradient(90deg,
+      #3b4862 0,
+      #3b4862 50%,
+      #6277a1 0,
+      #6277a1);
+  content: "";
+  display: block;
+  height: 1rem;
+  width: 20rem;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+
+.adm{
+  margin-top: 10rem;
+}
+
+@media (min-width: 768px){
+  .adm{
+    margin-top: 12rem;
+  }
+}
 
 /**footer**/
 .footer {

@@ -13,7 +13,7 @@ $idhorario = $_SESSION['idhorario'];
 
 
 
-  <main>
+  <main class="bg-payment ">
     <div class="container pt-5 mx-5">
         <h1 class="display-4 pt-5 mx-5">Paso Final</h1>
         <h1 class="display-6">
@@ -35,22 +35,29 @@ $idhorario = $_SESSION['idhorario'];
         </h1>
     </div>
 
-    <div class="container pt-5 mx-5">
+
+
+<div class="container card ">
+     <div class="">
         <h1 class="display-6">Ingrese su metodo de pago</h1>
+    <img class="" src="http://www.prepbootstrap.com/Content/images/shared/misc/creditcardicons.png">    
     </div>
+    
 
-    <form class="pt-5 mx-5">
+    <form class="">
 
-        <div class="row mb-3">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">Nombre titular</label>
+        <div class=" ">
+            <label for="inputEmail3" class="">Nombre titular</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="nombreComprador">
+                <input type="text" placeholder="Nombre del titular de la tarjeta" class="form-control" id="nombreComprador">
             </div>
         </div>
-        <div class="row mb-3">
-            <label for="inputPassword3" class="col-sm-2 col-form-label">Numero tarjeta</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" id="numeroTarjeta">
+        <div class="">
+            <label for="inputPassword3" class="">Numero tarjeta</label>
+            <div class="">
+                <input type="text" placeholder="Valid Card Number" class="form-control" id="numeroTarjeta">
+                <span class="input-group-addon"><span class="fa fa-credit-card"></span></span>
+
                 <input type="text" class="form-control" placeholder="CVV" aria-label="State">
             </div>
         </div>
@@ -58,11 +65,13 @@ $idhorario = $_SESSION['idhorario'];
 
         <!-- <button type="submit" class="btn btn-primary mx-5">Comprar</button> -->
         <!-- <button type="buttom" class="btn btn-primary mx-5">Comprar</button> -->
-        <a href='compra.php' role='button'>Comprar</a>
+        <a href='compra.php' role='button'>Procesar Pago</a>
     </form>
 
 
 
+</div>
+   
 
   </main>
 

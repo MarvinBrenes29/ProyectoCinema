@@ -5,7 +5,7 @@ $clase_login = new clsLogin();
 
 ?>
 <main class="container">
-    <div class="administracion mb-30 card">
+    <div class="administracion card">
         <div class="login__grid">
              <div>
                <h3 class="login__title mb-5"> Iniciar Sesión</h3>
