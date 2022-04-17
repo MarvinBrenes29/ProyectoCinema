@@ -9,27 +9,34 @@ ob_start();
     <form class="container" action="" method="POST" enctype="multipart/form-data">
 
         <div class="administracion">
-                <h2 class="administracion__heading">Administración de Banners</h2>
+            <div>
+                <h2 class="" class="adm__heading">Administración de Banners</h2>
+            </div>
+                
 
-        <div class="form-floating mb-3">
-            <input type="text" class="form-control" name="idbanner" id="" placeholder="Titulo">
-            <label for="">ID Banner</label>
+        <div class=" mb-3">
+                <label for="" class="mb-3">ID Banner</label>
+            <input type="text" class="form-control" name="idbanner" id="" placeholder="ID Banner">
+        
         </div>
 
 
-        <div class="form-floating mb-3">
+        <div class=" mb-3">
+           <label for="imagen" class="mb-3">Banner</label> 
             <input type="file" class="form-control" name="foto" id="" placeholder="">
-            <label for="imagen">Banner</label>
+            
         </div>
 
-        <div class="form-floating mb-3">
+        <div class=" mb-3">
+             <label for="" class="mb-3">Titulo</label>
             <input type="text" class="form-control" name="titulo" id="" placeholder="Titulo">
-            <label for="">Titulo</label>
+           
         </div>
 
-        <div class="form-floating mb-3">
+        <div class=" mb-3">
+            <label for="" class="mb-3">Fecha de Publicación</label>
             <input type="date" class="form-control" name="fecha" id="" placeholder="Fecha de nacimiento">
-            <label for="">Fecha de Publicacion</label>
+            
         </div>
 
         <div class="form-floating mb-3">
@@ -76,12 +83,6 @@ ob_start();
             
 
         ?>
-
-
-
-
-
-
 
 <?php
 include "shared/footer.php";

@@ -7,37 +7,42 @@ ob_start();
 ?>
 
   <form class="container" action="" method="POST" enctype="multipart/form-data">
-  <div class="administracion">
+  <div class="administracion mb-30">
   
-      <h1 class="administracion__heading">Administracion de Horarios</h1>
+      <h1 class="adm__heading">Administracion de Horarios</h1>
 
 
 
-      <div class="form-floating mb-3">
-        <input type="text" class="form-control" name="idpelicula" id="idpelicula" placeholder="">
-        <label for="">ID Pelicula</label>
+      <div class="mb-3">
+<label for="" class="mb-3">ID Pelicula</label>
+        <input type="text" class="form-control" name="idpelicula" id="idpelicula" placeholder="ID Película">
+        
       </div>
 
-      <div class="form-floating mb-3">
-        <input type="text" class="form-control" name="idSala" id="idSala" placeholder="">
-        <label for="">ID Sala</label>
+      <div class=" mb-3">
+<label for="" class="mb-3">ID Sala</label>
+        <input type="text" class="form-control" name="idSala" id="idSala" placeholder="ID Sala">
+        
       </div>
 
 
-      <div class="form-floating mb-3">
+      <div class=" mb-3">
+        <label for="" class="mb-3">Fecha</label>
         <input type="date" class="form-control" name="fecha" id="fecha" placeholder="Fecha">
-        <label for="">Fecha</label>
+        
       </div>
 
-      <div class="form-floating mb-3">
-        <input type="time" class="form-control" name="hora" id="hora" placeholder="">
-        <label for="">Hora</label>
+      <div class="mb-3">
+        <label for="" class="mb-3">Hora</label>
+        <input type="time" class="form-control" name="hora" id="hora" placeholder="Hora">
+        
       </div>
 
 
-      <div class="form-floating mb-3">
-        <input type="number" class="form-control" name="precio" id="precio" placeholder="">
-        <label for="">Precio</label>
+      <div class=" mb-3">
+        <label for="" class="mb-3">Precio</label>
+        <input type="number" class="form-control" name="precio" id="precio" placeholder="Precio">
+        
       </div>
 
 
