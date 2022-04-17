@@ -329,7 +329,7 @@ img {
 }
 
 .peliculas__heading{
-  margin-top: 20rem;
+  margin-top: 15rem;
   text-align: center;
 }
 .peliculas__heading::after {
@@ -411,6 +411,19 @@ img {
   grid-column-end: 9;
   grid-row-start: 6;
   grid-row-end: 9;
+
+}
+.gallery__item--7{
+  grid-column-start:1;
+  grid-column-end:5;
+  grid-row-start: 9;
+  grid-row-end: 9;
+}
+.gallery__item--8{
+  grid-column-start:5;
+  grid-column-end:9;
+  grid-row-start: 9;
+  grid-row-end: ;
 
 }
 

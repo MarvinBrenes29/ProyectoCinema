@@ -8,7 +8,7 @@ unset($_SESSION['vector']);
 
 <section class=" container-img peliculas">
     <div class="peliculas__heading">
-            <h2> <span>Próximos <span>Estrenos</span> </h2>
+            <h2 class="">Próximos Estrenos</h2>
     </div>
     <div class=" galeria">
             <div class="gallery">
@@ -30,6 +30,13 @@ unset($_SESSION['vector']);
                 <figure class="gallery__item gallery__item--6">
                     <img src="img/dog.jpg" alt="Gallery image 6" class="gallery__img">
                 </figure>
+                <figure class="gallery__item gallery__item--7">
+                    <img src="img/dog.jpg" alt="Gallery image 7" class="gallery__img">
+                </figure>
+                <figure class="gallery__item gallery__item--8">
+                    <img src="img/dog.jpg" alt="Gallery image 8" class="gallery__img">
+                </figure>
+         
             </div>
         </div>
 
