@@ -13,11 +13,11 @@ $idhorario = $_SESSION['idhorario'];
 
 
 
-  <main class="bg-payment ">
+<main class="bg-payment ">
     <div class="container pt-5 mx-5">
         <h1 class="display-4 pt-5 mx-5">Paso Final</h1>
         <h1 class="display-6">
-        <?php
+            <?php
             if(isset($_GET['entrada'])){
                 $conteoEntradas = count($vectorEntradas);
 
@@ -37,43 +37,46 @@ $idhorario = $_SESSION['idhorario'];
 
 
 
-<div class="container card ">
-     <div class="">
-        <h1 class="display-6">Ingrese su metodo de pago</h1>
-    <img class="" src="http://www.prepbootstrap.com/Content/images/shared/misc/creditcardicons.png">    
-    </div>
-    
+    <div class="container bg-white">
 
-    <form class="">
-
-        <div class=" ">
-            <label for="inputEmail3" class="">Nombre titular</label>
-            <div class="col-sm-10">
-                <input type="text" placeholder="Nombre del titular de la tarjeta" class="form-control" id="nombreComprador">
-            </div>
-        </div>
         <div class="">
-            <label for="inputPassword3" class="">Numero tarjeta</label>
-            <div class="">
-                <input type="text" placeholder="Valid Card Number" class="form-control" id="numeroTarjeta">
-                <span class="input-group-addon"><span class="fa fa-credit-card"></span></span>
-
-                <input type="text" class="form-control" placeholder="CVV" aria-label="State">
-            </div>
+            <h1 class="pay__heading">Ingrese su metodo de pago</h1>
+            <img class="pay__image" src="http://www.prepbootstrap.com/Content/images/shared/misc/creditcardicons.png">
         </div>
-        
-
-        <!-- <button type="submit" class="btn btn-primary mx-5">Comprar</button> -->
-        <!-- <button type="buttom" class="btn btn-primary mx-5">Comprar</button> -->
-        <a href='compra.php' role='button'>Procesar Pago</a>
-    </form>
 
 
+        <form class="">
 
-</div>
-   
+           
+                <label for="inputEmail3" class="pay__info">Nombre titular</label>
+                <div class="">
+                    <input type="text" placeholder="Nombre del titular de la tarjeta" class="form-control pay__input"
+                        id="nombreComprador">
+                </div>
+            
+          
+                <label for="inputPassword3" class="pay__info">Número tarjeta</label>
+                <div class="">
+                    <input type="text" placeholder="Valid Card Number" class="form-control pay__input" id="numeroTarjeta">
+                    <span class="input-group-addon"><span class="fa fa-credit-card"></span></span>
 
-  </main>
+                    <input type="text" class="form-control" placeholder="CVV" aria-label="State">
+                </div>
+           
+
+
+            <!-- <button type="submit" class="btn btn-primary mx-5">Comprar</button> -->
+            <!-- <button type="buttom" class="btn btn-primary mx-5">Comprar</button> -->
+            <a href='compra.php' role='button'>Procesar Pago</a>
+        </form>
+
+
+
+
+    </div>
+
+
+</main>
 
 
 <?php
