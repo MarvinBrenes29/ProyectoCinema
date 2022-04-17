@@ -52,6 +52,9 @@ img {
   margin-bottom: 40rem;
 
 }
+.mt-30{
+  margin-top: 30rem;
+}
 
 .header {
   min-width: 100rem;
@@ -292,7 +295,7 @@ img {
 
 
 #map{
-  width: 80%;
+  width: 100%;
   height: 400px;
 }
 
@@ -725,12 +728,13 @@ height: 50rem;
 
 .mapa__heading{
   color: #181616;
+  margin-top: 15rem;
   margin-bottom: 2rem;
 }
 
 .mapa__provincia{
   font-size: 2rem;
-  margin-bottom: 2rems;
+  margin-bottom: 2rem;
 }
 
 .mapa__provincias{
@@ -740,6 +744,9 @@ height: 50rem;
 
 .form-control {
   width: 20%;
+  height: 4rem;
+  font-size: 1.8rem;
+  margin-bottom: 4rem;
 }
 .form__input{
   padding:10px 10px;
@@ -777,6 +784,7 @@ height: 50rem;
 .historial__heading{
   margin-bottom: 5rem;
 }
+
 /**footer**/
 .footer {
   background-color: #212529;

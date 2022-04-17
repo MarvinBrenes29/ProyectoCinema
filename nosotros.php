@@ -5,14 +5,18 @@ unset($_SESSION['idhorario']);
 
 
 <section>
-   <h3 class="mapa__heading">Sucursales</h3>
+    <div class="container">
+        <div>
+            <h3 class="mapa__heading">Sucursales</h3>
+        </div>
+  
 
    <div id="contenedor">
   <!--Elemento Contenido-->
-  <div id="contenido">
+  <div class="contenido">
     <fieldset>
-      <legend>Selccione Provincia</legend>
-        <select class="form-control mb-3" id="provincia">
+      <legend class="mapa__provincia">Seleccione la  Provincia</legend>
+        <select class="form-control  form-group-lg" id="provincia">
           <option value="San Jose">San José</option>
           <option value="Alajuela">Alajuela</option>
           <option value="Heredia">Heredia</option>
@@ -21,7 +25,7 @@ unset($_SESSION['idhorario']);
           <option value="Puntarenas">Puntarenas</option>
           <option value="Limon">Limón</option>
         </select>
-        <button id="cargar" class="btn btn-outline-success">Cargar Clima</button>
+        <button id="cargar" class="btn btn-outline-success  btn-lg">Cargar Clima</button>
     </fieldset>
 
 
@@ -32,14 +36,18 @@ unset($_SESSION['idhorario']);
       <div id="containerMapa">
         <div id="map" class="mx-auto"></div>
       </div>
-      <div id='mapaProvincia' style='width: 500px; height: 400px'></div>
-    </fieldset>
-  </div>
+      
   <!--Fin elemento Contenido-->
 
  </div>
  <!--Fin Elemento Principal-->
 </div>
+
+
+
+
+    </div>
+ 
   
 </section>
 
