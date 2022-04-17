@@ -3,9 +3,9 @@ include "shared/header.php";
 ?>
 
 <main>
-    <div class="container mt-5">
+    <div class="container mt-5 mb-70">
         <div class="historial">
-            <h3 class="historial__heading">Historial de compra</h3>
+            <h3 class="adm__heading">Historial de compra</h3>
 
             <table class="table table-striped">
   <thead>
