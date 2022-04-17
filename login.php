@@ -5,9 +5,9 @@ $clase_login = new clsLogin();
 
 ?>
 <main class="container">
-    <div class="administracion card">
+    <div class="administracion mb-30 login">
         <div class="login__grid">
-             <div>
+             <div class="p-5">
                <h3 class="login__title mb-5"> Iniciar Sesión</h3>
                  <p class="text-muted mt-2 mb-5">Welcome Back!</p>
                  <p class="text-muted mt-2 mb-5"> Enter your email address and password to access admin panel.</p>
@@ -31,12 +31,17 @@ $clase_login = new clsLogin();
                 </form>
             </div>
 
-            <div class="account-block">
+            <div>
+
+               <div class="account-block">
                 <div class="account-testimonial">
                     <h4 class="text-white mb-4"> Cinema Plus </h4>
                 <p class="lead text-white">"Una buena historia te puede llevar a un viaje fantástico."</p>
                 <p class="lead text-white">-Walt Disney</p>
-                </div>
+                </div>  
+                
+            </div>
+           
                 
             </div>
 

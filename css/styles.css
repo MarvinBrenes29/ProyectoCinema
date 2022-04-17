@@ -275,6 +275,7 @@ img {
   margin-top: 0;
 }
 
+
 /*------Movies----*/
 .movie__info {
   margin-top: 5rem;
@@ -659,22 +660,31 @@ color: white;
   }
 }
 
+
 .login__title{
   color: #0288d1;
   font-weight: bold;
-  font-size: 2.2rem;
+  font-size: 2.8rem;
 }
 
 .login__grid{
   display: grid;
-  grid-template-columns: repeat(2, 1fr)
+  grid-template-rows: repeat(2, 1fr);
+  gap:3rem;
+}
+
+@media (min-width: 768px){
+  .login__grid{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+  }
 }
 .account-block {
   padding: 0;
   background-image: url(https://bootdey.com/img/Content/bg1.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100%;
+  height: 80%;
   position: relative;
 }
 
@@ -719,10 +729,16 @@ color: white;
   font-size: 1.8rem !important;
 }
 
+
 .administracion{
-  margin-top: 17rem;
+  margin-top: 9rem;
 }
 
+@media(min-width: 768px){
+  .administracion{
+    margin-top: 17rem;
+  }
+}
 .administracion__heading{
   margin-bottom: 4rem;
 }
@@ -803,11 +819,16 @@ height: 50rem;
 }
 
 .form-control {
-  width: 20%;
   height: 4rem;
   font-size: 1.8rem;
   margin-bottom: 4rem;
 }
+@media(min-width: 768px){
+  .form-control{
+    width: 40%;
+  }
+}
+
 .form__input{
   padding:10px 10px;
     line-height:100%;
@@ -870,6 +891,15 @@ height: 50rem;
     width: 61rem;
   }
 }
+
+@media (min-width: 768px){
+  .login{
+    height: 54rem;
+    width: 102rem;
+  }
+}
+
+
 .pay__image{
   width: 35rem;
   margin: 0 auto;
