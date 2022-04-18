@@ -9,6 +9,8 @@ $_SESSION['comboentrada'] = $_GET['entrada'];
 $_SESSION['vector'] = $vectorEntradas;
 $idhorario = $_SESSION['idhorario'];
 
+
+
 ?>
 
 
@@ -17,7 +19,10 @@ $idhorario = $_SESSION['idhorario'];
     <div class="container pt-5 mx-5">
         <h1 class="display-4 pt-5 mx-5">Paso Final</h1>
         <h1 class="display-6">
-            <?php
+
+    
+        <?php
+
             if(isset($_GET['entrada'])){
                 $conteoEntradas = count($vectorEntradas);
 
@@ -43,6 +48,10 @@ $idhorario = $_SESSION['idhorario'];
             <h1 class="pay__heading">Ingrese su metodo de pago</h1>
             <img class="pay__image" src="http://www.prepbootstrap.com/Content/images/shared/misc/creditcardicons.png">
         </div>
+
+
+        <a href='compra.php?idhorario=<?php $idhorario ?>' role='button'>Comprar</a>
+    </form>
 
 
         <form class="">

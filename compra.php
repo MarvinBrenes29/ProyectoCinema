@@ -16,14 +16,26 @@ $longitud = count($vector);
 for($i=0; $i<$longitud; $i++){
 
     $sillas->insertar_asiento($vector[$i], $idhorario);
-    echo 'si entro'.$i;
 }
 
 
-$sillas->insertar_compra($usuario, $idpelicula, $idhorario, $montoEntradas, $comboEntrada);
+$nombrePelicula = $sillas->obtenerPelicula($idpelicula);
+
+$nombreHora = $sillas->obtenerHora($idhorario);
+
+$nombreFecha = $sillas->obtenerFecha($idhorario);
 
 
 
-header('location: index.php');
+$sillas->insertar_compra($montoEntradas, $comboEntrada, $nombrePelicula, $nombreFecha, $nombreHora, $usuario);
+
+// enviar datos a generacionCOmprbante
+
+$_SESSION['idcompra'] = $sillas->obtenerIdCompra($montoEntradas, $comboEntrada, $nombrePelicula, $nombreFecha, $nombreHora, $usuario);
+
+$_SESSION['nombrePelicula'] = $nombrePelicula;
+
+
+header('location: generacionComprobante.php');
 
 ?>

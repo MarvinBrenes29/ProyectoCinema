@@ -169,11 +169,12 @@ img {
 
 .nav-link--button {
   background-color: var(--primario);
-  padding: 0.8rem;
+  padding: 1rem;
   color: #fff;
   font-size: 1.4rem;
   font-weight: 400;
   border: none;
+  float:right
  
 }
 .nav-link--button:hover{
@@ -1052,7 +1053,7 @@ height: 50rem;
 
 /* Aqui le dejo la clase para que la modifique */
 .imgUsr{
-  width: 5rem;
+  width:12rem;
 }
 
 .crudPeli{
