@@ -1,5 +1,6 @@
 <?php
-include "model/clsSillas.php";
+
+require "model/clsSillas.php";
 session_start();
 $sillas = new clsSillas();
 
@@ -21,6 +22,8 @@ for($i=0; $i<$longitud; $i++){
 
 $nombrePelicula = $sillas->obtenerPelicula($idpelicula);
 
+$_SESSION['nombrePelicula'] = $nombrePelicula;
+
 $nombreHora = $sillas->obtenerHora($idhorario);
 
 $nombreFecha = $sillas->obtenerFecha($idhorario);
@@ -31,14 +34,16 @@ $sillas->insertar_compra($montoEntradas, $comboEntrada, $nombrePelicula, $nombre
 
 // enviar datos a generacionCOmprbante
 
-$_SESSION['idcompra'] = $sillas->obtenerIdCompra($montoEntradas, $comboEntrada, $nombrePelicula, $nombreFecha, $nombreHora, $usuario);
+$_SESSION['idcompra'] = $sillas->obtenerIdCompra($nombrePelicula, $nombreFecha, $nombreHora);
 
 $_SESSION['nombrePelicula'] = $nombrePelicula;
 
 
+
+
 // header('location: generacionComprobante.php');
 
-header('location: index.php');
+header('location: pdf\PDF\generacionComprobante.php');
 
 
 

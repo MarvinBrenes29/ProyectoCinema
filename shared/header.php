@@ -96,6 +96,7 @@
                                           </a>
                                           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                           <li><a class="dropdown-item" href="historial_compra.php">Historial de Compras</a></li>
+                                          <li><a class="dropdown-item" href="modificar_usuario.php">Modificar Usuario</a></li>
                                           </ul>
                                       </li>
                                   </ul>

@@ -208,12 +208,12 @@ class clsSillas extends clsConexion{
         }
 
 
-        public function obtenerIdCompra($monto, $asientos, $pelicula, $fecha, $hora, $usuario) {
+        public function obtenerIdCompra($pelicula, $fecha, $hora) {
         
 
             $dbh = $this->conectar();
             if ($dbh != null) {
-                $consulta = $dbh->prepare("SELECT idcompra from compra where pelicula = $pelicula and fecha = $fecha and hora = $hora and asientos = $asientos and monto = $monto and tlogin_usuario = $usuario");
+                $consulta = $dbh->prepare("SELECT idcompra from compra where pelicula = '$pelicula' and fecha = '$fecha' and hora = '$hora'");
 
                 
                 $consulta->setFetchMode(PDO::FETCH_ASSOC); 

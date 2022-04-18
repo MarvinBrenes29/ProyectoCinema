@@ -1,6 +1,9 @@
 <?php
 include "shared/header.php";
 unset($_SESSION['idhorario']);
+
+require "model/clsMapa.php";
+$mapa = new clsMapa();
 ?>
 
 
@@ -14,19 +17,25 @@ unset($_SESSION['idhorario']);
    <div id="contenedor">
   <!--Elemento Contenido-->
   <div class="contenido">
-    <fieldset>
+    <fieldset method="POST">
       <legend class="mapa__provincia">Seleccione la  Provincia</legend>
-        <select class="form-control  form-group-lg" id="provincia">
-          <option value="San Jose">San José</option>
-          <option value="Alajuela">Alajuela</option>
-          <option value="Heredia">Heredia</option>
-          <option value="Cartago">Cartago</option>
-          <option value="Guanacaste">Guanacaste</option>
-          <option value="Puntarenas">Puntarenas</option>
-          <option value="Limon">Limón</option>
+        <select class="form-control  form-group-lg" name="provincia" id="provincia">
+          <option value="san jose">San José</option>
+          <option value="alajuela">Alajuela</option>
+          <option value="heredia">Heredia</option>
+          <option value="cartago">Cartago</option>
+          <option value="guanacaste">Guanacaste</option>
+          <option value="puntarenas">Puntarenas</option>
+          <option value="limon">Limón</option>
         </select>
-        <button id="cargar" class="btn btn-outline-success  btn-lg">Cargar Clima</button>
+        <button id="cargar" type="submit" class="btn btn-outline-success  btn-lg">Cargar Ubicacion</button>
     </fieldset>
+
+    <?php 
+        if(isset($_POST['provincia'])){
+            $provincia = $_POST['provincia']; 
+        }
+    ?>
 
 
     <br><br>
@@ -35,10 +44,6 @@ unset($_SESSION['idhorario']);
      
       <div id="containerMapa">
         <div id="map" class="mx-auto"></div>
-
-
-
-        
       </div>
       
   <!--Fin elemento Contenido-->
@@ -132,11 +137,38 @@ unset($_SESSION['idhorario']);
 </section>
 
 
-<script src="js/app.js"></script>
+
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
     integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
     crossorigin=""></script>
 
+    
+    <script>
+        // latitud y longitud 9.940461307347173, -84.10626374140911
+        var map = L.map('map').setView([<?php 
+        if(isset($provincia)){
+            echo $mapa->obtenerlatitud($provincia);
+        }else{
+            echo 9.940461307347173;
+        }
+         ?>, <?php 
+         if(isset($provincia)){
+            echo $mapa->obtenerlongitud($provincia);
+         }else{
+            echo -84.10626374140911;
+         }
+          ?>], 
+          17);
+
+        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            maxZoom: 22,
+            id: 'mapbox/streets-v11',
+            tileSize: 512,
+            zoomOffset: -1,
+            accessToken: 'pk.eyJ1IjoiYWxzb2xpczEyMyIsImEiOiJja3prdGZidmMxbmVxMm9xcmJwa3RyOHFiIn0.KKEIgHgO6Pj3YqAzp_Lw2A'
+        }).addTo(map);
+    </script>
 <?php
 include "shared/footer.php";
 ?>
