@@ -119,7 +119,7 @@ unset($_SESSION['idhorario']);
                     </div>
                 </div>
                 <div>
-                    <button id="enviar" class="btn__enviar" type="submit">Enviar
+                    <button id="enviar" class="boton draw-border" type="submit">Enviar
                     </button>
 
                 </div>

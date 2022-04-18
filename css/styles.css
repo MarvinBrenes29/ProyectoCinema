@@ -74,6 +74,70 @@ img {
 .mb-70{
   margin-bottom: 70rem;
 }
+
+/*Botones*/
+
+.draw-border {
+  box-shadow: inset 0 0 0 4px #0288d1;
+  color: #0288d1;
+  -webkit-transition: color 0.25s 0.0833333333s;
+  transition: color 0.25s 0.0833333333s;
+  position: relative;
+}
+.draw-border::before, .draw-border::after {
+  border: 0 solid transparent;
+  box-sizing: border-box;
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  width: 0;
+  height: 0;
+  bottom: 0;
+  right: 0;
+}
+.draw-border::before {
+  border-bottom-width: 4px;
+  border-left-width: 4px;
+}
+.draw-border::after {
+  border-top-width: 4px;
+  border-right-width: 4px;
+}
+.draw-border:hover {
+  color: #212529;
+}
+.draw-border:hover::before, .draw-border:hover::after {
+  border-color: #212529;
+  -webkit-transition: border-color 0s, width 0.25s, height 0.25s;
+  transition: border-color 0s, width 0.25s, height 0.25s;
+  width: 100%;
+  height: 100%;
+}
+.draw-border:hover::before {
+  -webkit-transition-delay: 0s, 0s, 0.25s;
+          transition-delay: 0s, 0s, 0.25s;
+}
+.draw-border:hover::after {
+  -webkit-transition-delay: 0s, 0.25s, 0s;
+          transition-delay: 0s, 0.25s, 0s;
+}
+
+.boton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.6rem;
+  padding: 1rem;
+  margin-top: 2rem;
+  width: 10rem; 
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.boton:focus {
+  outline: 2px dotted #55d7dc;
+}
+
+
 .header {
   min-width: 100rem;
   background-image: url(../img/Venom.jpg);
@@ -81,14 +145,6 @@ img {
   background-size: cover;
   height: 40rem;
   padding: 2rem;
-}
-
-
-
-.contenedor {
-  max-width: 1050px;
-  width: 90%;
-  margin: auto;
 }
 
 .logo {
@@ -119,6 +175,10 @@ img {
   font-weight: 400;
   border: none;
  
+}
+.nav-link--button:hover{
+  color: #181616;
+  font-weight: bold;
 }
 
 /*Slider*/
@@ -527,25 +587,6 @@ form {
   border: 1px solid #e1e1e1;
   width: 100%;
 }
-
-.btn__enviar{
- 
-  padding: 0.8rem;
-  color: rgb(16, 16, 16);
-  font-size: 1.8rem;
-  font-weight: 400;
-  border: 1px solid var(--secundario);
-  border-radius: 5%;
-  margin-top: 3rem;
-}
-
-.btn__enviar:hover{
-background-color: var(--secundario);
-color: white;
-}
-
-
-
 
 #loaders {
   text-align: center;
