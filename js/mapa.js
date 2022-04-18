@@ -1,29 +1,38 @@
-"use strict"
+"use strict";
 
-document.querySelector("#cargar").onlick = function() {
+document.querySelector("#cargar").onclick = function(){
 
+  
     let ciudad = document.querySelector("#provincia").value;
 
     const key = '12fad6141ceb33a4c8a08d4193920fe9';
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${ciudad},cr&appid=${key}&lang=es`
 
+    
+
     fetch(url)
-    then(respuesta => respuesta.json())
-    then(datos => {
-        mostrarDatos(datos, ciudad)
-    })
+        .then(respuesta => respuesta.json())
+        .then(datos => {
+            mostrarDatos(datos, ciudad);
+        })
+    
+   
 
 }
 
 function mostrarDatos(datos){
+
+ 
     const {coord: {lon, lat}} = datos;
 
-    mostrarMapa([lat, lon], 8)
+    mostrarMapa([lat, lon], 8);
+
 }
 
 function mostrarMapa(coordenadas, zoom){
 
-    document.querySelector("#containerMapa").innerHTML = `<div id="map" class="mx-auto"></div>`;
+ 
+document.querySelector("#containerMapa").innerHTML = `<div id="map" class="mx-auto"></div>`;
 
 var map = L.map('map').setView(coordenadas, zoom);
 
@@ -43,7 +52,9 @@ var marcador = L.marker(coordenadas).addTo(map);
 let texto = elaboracionTexto(provincia);
 
 marcador.bindPopup(`<h1>Bienvenidos a ${provincia}</h1> <p>${texto}</p>`);
+
 }
+
 
 function elaboracionTexto(provincia){
     let texto = "";

@@ -5,64 +5,73 @@ include "shared/header.php";
 <main>
     <div class="container ">
         <div class="modificar">
-             <form class="w-40 m-auto" action="" method="POST">
-                <div class="d-flex justify-content-center bd-highlight mb-3">
+             <form class="" action="" method="POST">
+                <div class=" bd-highlight mb-3">
 
 
                     <div class="me-auto p-2 bd-highlight ">
-                        <h2>Modificar Usuario
+                        <h2 class="adm__heading">Modificar Usuario
                     </div>
 
                 </div>
            
-                <div class="form-floating mb-3">
+                <div class="mb-3">
+                    <label for="" class="mb-3">Nombre</label>
                     <input type="text" class="form-control" name="" id="" placeholder="" disabled>
-                    <label for="">Nombre</label>
+                    
                 </div>
 
-                <div class="form-floating mb-3">
-                    <input type="text" class="form-control" name="" id="">
-                    <label for="">Primer Apellido</label>
-                </div>
-
-
-                <div class="form-floating mb-3">
-                    <input type="text" class="form-control" name="" id="" >
-                    <label for="">Segundo Apellido</label>
-                </div>
-
-                <div class="form-floating mb-3">
-                    <input type="text" class="form-control" name="" id="" >
-                    <label for="">Telefono</label>
-                </div>
-
-                <div class="form-floating mb-3">
-                    <input type="date" class="form-control" name="" id="" >
-                    <label for="">Fecha de Nacimiento</label>
+                <div class="mb-3">
+                    <label for="" class="mb-3">Primer Apellido</label>
+                    <input type="text" class="form-control " name="" id="" placeholder="Primer Apellido">
                 </div>
 
 
-                <div class="form-floating mb-3">
-                    <input type="text" class="form-control" name="" id="" >
-                    <label for="">Usuario</label>
+                <div class=" mb-3">
+                    <label for="" class="mb-3">Segundo Apellido</label>
+                    <input type="text" class="form-control" name="" id="" placeholder="Segundo Apellido" >
+                    
                 </div>
 
-                <div class="form-floating mb-3">
-                    <input type="email" class="form-control" name="email" id="email" >
-                    <label for="email">Email</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input type="file" class="form-control" name="" id="" placeholder="">
-                    <label for="imagen">Fotografía</label>
+                <div class=" mb-3">
+                    <label for="" class="mb-3">Teléfono</label>
+                    <input type="text" class="form-control" name="" id=""placeholder="Número de Teléfono" >
+                    
                 </div>
 
-                <div class="form-floating mb-3">
-                    <input type="password" class="form-control" name="clave" id="clave" >
-                    <label for="clave">Clave</label>
+                <div class=" mb-3">
+                    <label for="" class="mb-3">Fecha de Nacimiento</label>
+                    <input type="date" class="form-control" name="" id="" placeholder="Fecha de nacimiento" >
+                    
                 </div>
-                <div class="form-floating mb-3">
-                    <input type="password" class="form-control" name="cclave" id="cclave" >
-                    <label for="cclave">Confirmar Clave</label>
+
+
+                <div class=" mb-3">
+                    <label for=""  class="mb-3">Usuario</label>
+                    <input type="text" class="form-control" name="" id="" placeholder="Usuario" >
+                    
+                </div>
+
+                <div class=" mb-3">
+                    <label for="email" class="mb-3">Email</label>
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Email" >
+                    
+                </div>
+                <div class=" mb-3">
+                    <label for="imagen" class="mb-3">Fotografía</label>
+                    <input type="file" class="form-control" name="" id="" placeholder="" placeholder="Fotografía">
+                    
+                </div>
+
+                <div class=" mb-3">
+                     <label for="clave" class="mb-3">Clave</label>
+                    <input type="password" class="form-control" name="clave" id="clave"  placeholder="Clave">
+                   
+                </div>
+                <div class=" mb-3">
+                <label for="cclave"class="mb-3">Confirmar Clave</label>
+                    <input type="password" class="form-control" name="cclave" id="cclave" placeholder="Confirmar Clave" >
+                    
                 </div>
                 <div class="mb-3">
                     <button type="submit" class="btn btn-outline-dark" href="">Modificar</button>

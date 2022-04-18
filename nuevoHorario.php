@@ -1,17 +1,15 @@
 <?php
 include "shared/header.php";
 require "model/clsAdm_peliculas.php";
-require "model/clsSillas.php";
 
 $clase_pelicula = new clsAdm_peliculas();
-$sillas = new clsSillas();
 
 
 ob_start();
 ?>
 
   <form class="container" action="" method="POST" enctype="multipart/form-data">
-  <div class="administracion">
+  <div class="administracion mb-30">
   
       <h1 class="administracion__heading">Administracion de Horarios</h1>
 

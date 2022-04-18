@@ -125,8 +125,8 @@ class clsAdm_peliculas extends clsConexion{
                     if($v["estado"] != 0){
                         $filas .= "
                                 <div class='pelicula' type='submit'>
-                                    <a href='detallePelicula.php?pelicula=$v[idpelicula]'>
-                                            <img src='img/peliculas/$v[idpelicula].jpg'>
+                                        <a href='detallePelicula.php?pelicula=$v[idpelicula]'>
+                                        <img src='img/peliculas/$v[idpelicula].jpg'>
                                     </a>
                                 </div>
                         ";
