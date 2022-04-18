@@ -5,65 +5,75 @@ $clase_login = new clsLogin();
 ob_start();
 ?>
     <main class="container">
-        <div class="administracion">
-            <form class="w-40 m-auto" action="" method="POST" enctype="multipart/form-data">
+        <div class="administracion ">
+            <form class="" action="" method="POST" enctype="multipart/form-data">
                 <div class="d-flex justify-content-center bd-highlight mb-3">
 
 
-                    <div class="me-auto p-2 bd-highlight ">
-                        <h2>Registro de Usuario
+                    <div class="p-2 bd-highlight ">
+                        <h2 class="adm__heading">Registro de Usuario
                     </div>
 
                 </div>
-                <p>Personal</p>
-                <div class="form-floating mb-3">
+                <p class="mb-5">Personal</p>
+                <div class="mb-5">
+                    <label for="" class="mb-3">Nombre</label>
                     <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre">
-                    <label for="">Nombre</label>
+                    
                 </div>
 
-                <div class="form-floating mb-3">
-                    <input type="text" class="form-control" name="apellido1" id="apellido1" placeholder="Primer Apellido">
-                    <label for="">Primer Apellido</label>
+                <div class=" mb-5">
+                    <label for="" class="mb-3">Primer Apellido</label>
+                     <input type="text" class="form-control" name="apellido1" id="apellido1" placeholder="Primer Apellido">
+                    
                 </div>
 
 
-                <div class="form-floating mb-3">
+                <div class="mb-5">
+                        <label for="" class="mb-5">Segundo Apellido</label>
                     <input type="text" class="form-control" name="apellido2" id="apellido2" placeholder="Segundo Apellido">
-                    <label for="">Segundo Apellido</label>
+                    
                 </div>
 
-                <div class="form-floating mb-3">
+                <div class=" mb-5">
+                    <label for=""class=" mb-3" >Teléfono</label>
                     <input type="text" class="form-control" name="telefono" id="telefono" placeholder="Teléfono">
-                    <label for="">Telefono</label>
+                   
                 </div>
 
-                <div class="form-floating mb-3">
+                <div class=" mb-5">
+                     <label for="" class=" mb-3">Fecha de Nacimiento</label>
                     <input type="date" class="form-control" name="fecha_nacimiento" id="fecha_nacimiento" placeholder="Fecha de nacimiento">
-                    <label for="">Fecha de Nacimiento</label>
+                   
                 </div>
 
 
-                <div class="form-floating mb-3">
+                <div class=" mb-5">
+                    <label for="" class=" mb-5">Usuario</label>
                     <input type="text" class="form-control" name="usuario" id="usuario" placeholder="Usuario">
-                    <label for="">Usuario</label>
+                    
                 </div>
 
-                <div class="form-floating mb-3">
+                <div class="mb-5">
+                    <label for="email" class=" mb-3">Email</label>
                     <input type="email" class="form-control" name="correo" id="correo" placeholder="email">
-                    <label for="email">Email</label>
+                    
                 </div>
-                <div class="form-floating mb-3">
+                <div class="mb-5">
+                    <label for="imagen" class=" mb-3">Fotografía</label>
                     <input type="file" class="form-control" name="foto" id="foto" placeholder="">
-                    <label for="imagen">Fotografía</label>
+                    
                 </div>
 
-                <div class="form-floating mb-3">
+                <div class=" mb-5">
+                    <label for="clave" class=" mb-3">Clave</label>
                     <input type="password" class="form-control" name="contrasenia" id="contrasenia" placeholder="clave">
-                    <label for="clave">Clave</label>
+                    
                 </div>
-                <div class="form-floating mb-3">
+                <div class="mb-5">
+                    <label for="cclave" class=" mb-3">Confirmar Clave</label>
                     <input type="password" class="form-control" name="confirmar_contrasenia" id="confirmar_contrasenia" placeholder="Confirmar clave">
-                    <label for="cclave">Confirmar Clave</label>
+                    
                 </div>
                 <div class="mb-3">
                     <button type="submit" class="btn btn-outline-dark" href="">Crear Usuario</button>

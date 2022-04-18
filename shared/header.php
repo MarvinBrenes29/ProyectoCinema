@@ -28,7 +28,7 @@
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="styleSillas.css" />
     <link rel="stylesheet" href ="css/estilos-tabla.css">  
-      <link rel="stylesheet" href="css/styles.css">
+      <link rel="stylesheet" href="css/styles?2.0.css">
       
   <title>Cinema</title>
 </head>
@@ -37,7 +37,7 @@
 
   <!-- Navbar  -->
   <section class="pb-4">
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top mt-10">
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
       <div class="container">
         <a href="index.php">
           <img class="logo" src="img/Logo.png" alt="">
