@@ -36,6 +36,11 @@ $_SESSION['idcompra'] = $sillas->obtenerIdCompra($montoEntradas, $comboEntrada, 
 $_SESSION['nombrePelicula'] = $nombrePelicula;
 
 
-header('location: generacionComprobante.php');
+// header('location: generacionComprobante.php');
+
+header('location: index.php');
+
+
+
 
 ?>

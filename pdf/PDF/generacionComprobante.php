@@ -16,9 +16,7 @@ require "C:\\wamp64\\www\\ProyectoCinema\\phpmailer\\SMTP.php";
 //ocultar cualquier notificacion
 error_reporting(0);
 
-$cedula = $_POST["cedula"];
-$nombre = $_POST["nombre"];
-$deporte = $_POST["deporte"];
+
 
 require "../tcpdf_include.php";
 
