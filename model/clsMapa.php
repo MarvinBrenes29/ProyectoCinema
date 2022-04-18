@@ -15,7 +15,7 @@ class clsMapa extends clsConexion{
     public function obtenerlatitud($provincia){
         $dbh = $this->conectar();
         if ($dbh != null) {
-            $consulta = $dbh->prepare("SELECT latitud from mapa where provincia = $provincia");
+            $consulta = $dbh->prepare("SELECT latitud from mapa where provincia = '$provincia'");
 
             
             $consulta->setFetchMode(PDO::FETCH_ASSOC); 
@@ -34,7 +34,7 @@ class clsMapa extends clsConexion{
     public function obtenerlongitud($provincia){
         $dbh = $this->conectar();
         if ($dbh != null) {
-            $consulta = $dbh->prepare("SELECT longitud from mapa where provincia = $provincia");
+            $consulta = $dbh->prepare("SELECT longitud from mapa where provincia = '$provincia'");
 
             
             $consulta->setFetchMode(PDO::FETCH_ASSOC); 

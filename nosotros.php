@@ -17,7 +17,7 @@ $mapa = new clsMapa();
    <div id="contenedor">
   <!--Elemento Contenido-->
   <div class="contenido">
-    <fieldset method="POST">
+    <form method="POST">
       <legend class="mapa__provincia">Seleccione la  Provincia</legend>
         <select class="form-control  form-group-lg" name="provincia" id="provincia">
           <option value="san jose">San José</option>
@@ -29,15 +29,28 @@ $mapa = new clsMapa();
           <option value="limon">Limón</option>
         </select>
         <button id="cargar" type="submit" class="btn btn-outline-success  btn-lg">Cargar Ubicacion</button>
-    </fieldset>
+    </form>
 
     <?php 
+        
+
         if(isset($_POST['provincia'])){
-            $provincia = $_POST['provincia']; 
+            $provincia = $_POST['provincia'];
+        }else{
+            $provincia = 'san jose';
         }
     ?>
 
-
+    <?php 
+    if(isset($provincia)){
+        $latitud = $mapa->obtenerlatitud($provincia);
+        $longitud = $mapa->obtenerlongitud($provincia);
+    }else{ 
+        $latitud = 9.935470955250178;
+        $longitud = -84.10443318733695;
+    }?>
+    
+    
     <br><br>
 
     <fieldset id="contenedorMapa">
@@ -138,28 +151,22 @@ $mapa = new clsMapa();
 
 
 
+
+
+
+
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
     integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
     crossorigin=""></script>
 
     
+    
+    <?php
+       echo '<script> var map = L.map("map").setView([ "'.$latitud.'" , "'.$longitud.'"], 17);
+            var marcador = L.marker([ "'.$latitud.'" , "'.$longitud.'"]).addTo(map);
+            marcador.bindPopup(`<h1>The MovieDB</h1>`);  </script>';
+    ?>
     <script>
-        // latitud y longitud 9.940461307347173, -84.10626374140911
-        var map = L.map('map').setView([<?php 
-        if(isset($provincia)){
-            echo $mapa->obtenerlatitud($provincia);
-        }else{
-            echo 9.940461307347173;
-        }
-         ?>, <?php 
-         if(isset($provincia)){
-            echo $mapa->obtenerlongitud($provincia);
-         }else{
-            echo -84.10626374140911;
-         }
-          ?>], 
-          17);
-
         L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
             attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
             maxZoom: 22,
