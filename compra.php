@@ -27,12 +27,15 @@ $nombreFecha = $sillas->obtenerFecha($idhorario);
 
 
 
-
-
 $sillas->insertar_compra($montoEntradas, $comboEntrada, $nombrePelicula, $nombreFecha, $nombreHora, $usuario);
 
+// enviar datos a generacionCOmprbante
+
+$_SESSION['idcompra'] = $sillas->obtenerIdCompra($montoEntradas, $comboEntrada, $nombrePelicula, $nombreFecha, $nombreHora, $usuario);
+
+$_SESSION['nombrePelicula'] = $nombrePelicula;
 
 
-header('location: index.php');
+header('location: generacionComprobante.php');
 
 ?>
