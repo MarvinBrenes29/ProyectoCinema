@@ -50,7 +50,7 @@ $idhorario = $_SESSION['idhorario'];
         </div>
 
 
-        <a href='compra.php?idhorario=<?php $idhorario ?>' role='button'>Comprar</a>
+        
     </form>
 
 

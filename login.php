@@ -2,7 +2,7 @@
 include "shared/header.php";
 require "model/clsLogin.php";
 $clase_login = new clsLogin();
-
+ob_start();
 ?>
 <main class="container">
     <div class="administracion mb-30 login">
