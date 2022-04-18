@@ -2,7 +2,6 @@
 
 session_start();
 
-
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -59,7 +58,7 @@ $html = "
 
 <h2>".$_SESSION['nombrePelicula']."</h2>
 
-<h3>EL monto a pagar es de </h3>
+<h3>EL monto a pagar es de ".$_SESSION['montoEntradas']." colones. </h3>
 
 
 
@@ -103,7 +102,7 @@ $pdf->write2DBarcode('https://www.instagram.com/floresycolores.cr/reels/', 'QRCO
 
 $filelocation = "C:\\wamp64\\www\\ProyectoCinema\\pdf\\PDF\\descargas";
 
-$fileNL = $filelocation."\\"."Cliente-Compra.pdf";
+$fileNL = $filelocation."\\".$_SESSION['idcompra'].".pdf";
 
 // $fileNL = $filelocation."\\".$filename;
 
@@ -129,7 +128,7 @@ try {
     $mail->addAddress('cordoba.solis16@gmail.com', 'Joe User');     //Add a recipient
 
     //Attachments
-    $mail->addAttachment('./descargas/Cliente-Compra.pdf');         //Add attachments
+    $mail->addAttachment('./descargas/'.$_SESSION['idcompra'].'.pdf');         //Add attachments
 
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
@@ -143,4 +142,6 @@ try {
 }
 
 
-header('location: index.php');
+header("location: ../../index.php");
+
+?>
