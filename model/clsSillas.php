@@ -206,6 +206,30 @@ class clsSillas extends clsConexion{
                 return $salida;
             }
         }
+
+
+        public function obtenerIdCompra($monto, $asientos, $pelicula, $fecha, $hora, $usuario) {
+        
+
+            $dbh = $this->conectar();
+            if ($dbh != null) {
+                $consulta = $dbh->prepare("SELECT idcompra from compra where pelicula = $pelicula and fecha = $fecha and hora = $hora and asientos = $asientos and monto = $monto and tlogin_usuario = $usuario");
+
+                
+                $consulta->setFetchMode(PDO::FETCH_ASSOC); 
+                $consulta->execute();
+                $salida ="";
+    
+                foreach ($consulta as $key => $v) {
+                   $salida = $v['idcompra'];
+                            
+                }
+                $dbh=null;
+                return $salida;
+            }
+        }
+
+        
 }
     
 ?>
