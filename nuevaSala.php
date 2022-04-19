@@ -8,11 +8,12 @@ ob_start();
 
   <form class="container"  action="" method="POST" enctype="multipart/form-data">
     <div class="administracion mb-30">
-      <h1 class="administracion__heading">Admnistración de Salas</h1>
+      <h1 class="adm__heading">Admnistración de Salas</h1>
 
-      <div class="form-floating mb-3">
+      <div class=" mb-5">
+        <label for=""  class="mb-3">Nombre</label>
         <input type="text" class="form-control" name="nombreSala" id="" placeholder="Nombre">
-        <label for="">Nombre</label>
+        
       </div>
       <div class="form-floating mb-3">
         <p>Tipo de sala</p>
