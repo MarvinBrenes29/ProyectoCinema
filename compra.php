@@ -28,6 +28,10 @@ $nombreHora = $sillas->obtenerHora($idhorario);
 
 $nombreFecha = $sillas->obtenerFecha($idhorario);
 
+$_SESSION['correoCliente'] = $sillas->obtenerCorreo($usuario);
+
+$_SESSION['trailer'] = $sillas->obtenerTrailer($idpelicula);
+
 
 
 $sillas->insertar_compra($montoEntradas, $comboEntrada, $nombrePelicula, $nombreFecha, $nombreHora, $usuario);
