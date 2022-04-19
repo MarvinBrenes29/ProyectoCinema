@@ -1,4 +1,5 @@
 <?php
+ob_start();
 include "shared/header.php";
 include "model/clsAdm_peliculas.php";
 $idpelicula=$_GET["idpelicula"];
@@ -10,7 +11,7 @@ if($_POST){
   echo "pos";
   $v-> idpelicula = $_POST["idpelicula"];
   $v->eliminar_pelicula();
-  header("Location:adm_peliculas.php");
+  header("Location: adm_peliculas.php");
 }
 ?>
 

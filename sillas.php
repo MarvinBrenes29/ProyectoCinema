@@ -17,7 +17,10 @@ $idhorario = $_SESSION['idhorario'];
     <title>Movie Seat Booking</title>
   </head>
   <body>
-  
+    
+        <h1 id="contador">Hola</h1>
+    
+
     <div class="movie-container">
      
     </div>
@@ -121,5 +124,6 @@ $idhorario = $_SESSION['idhorario'];
   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
   crossorigin="anonymous"></script>
     <script src="js/scriptSillas.js"></script>
+    <script src="js/timer.js"></script>
   </body>
 </html>

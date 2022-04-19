@@ -16,11 +16,11 @@ class clsSillas extends clsConexion{
         if ($dbh != null) {
             try {
                 
-                $consulta_login = $dbh->prepare("INSERT INTO sillas (silla, adm_horario_idhorario) VALUES(:silla, :adm_horario_idhorario)");
+                $consulta_login = $dbh->prepare("INSERT INTO sillas (silla, idhorario) VALUES(:silla, :idhorario)");
 
                 
                 $consulta_login->bindParam(":silla", $silla);
-                $consulta_login->bindParam(":adm_horario_idhorario", $idhorario);
+                $consulta_login->bindParam(":idhorario", $idhorario);
 
 
                 $consulta_login->execute();
@@ -59,7 +59,7 @@ class clsSillas extends clsConexion{
         $dbh = $this->conectar();
         if ($dbh != null) {
                 $texto = "";
-                $consulta = $dbh->prepare("SELECT silla FROM sillas where adm_horario_idhorario = :idhorario and silla = :silla");
+                $consulta = $dbh->prepare("SELECT silla FROM sillas where idhorario = :idhorario and silla = :silla");
                 
                 $consulta->bindParam(":idhorario", $idhorario);
                 $consulta->bindParam(":silla", $silla);
@@ -222,6 +222,48 @@ class clsSillas extends clsConexion{
     
                 foreach ($consulta as $key => $v) {
                    $salida = $v['idcompra'];
+                            
+                }
+                $dbh=null;
+                return $salida;
+            }
+        }
+
+        public function obtenerCorreo($usuario) {
+        
+
+            $dbh = $this->conectar();
+            if ($dbh != null) {
+                $consulta = $dbh->prepare("SELECT correo from tlogin where usuario = '$usuario'");
+
+                
+                $consulta->setFetchMode(PDO::FETCH_ASSOC); 
+                $consulta->execute();
+                $salida ="";
+    
+                foreach ($consulta as $key => $v) {
+                   $salida = $v['correo'];
+                            
+                }
+                $dbh=null;
+                return $salida;
+            }
+        }
+
+        public function obtenerTrailer($idpelicula) {
+        
+
+            $dbh = $this->conectar();
+            if ($dbh != null) {
+                $consulta = $dbh->prepare("SELECT trailer from adm_pelicula where idpelicula = '$idpelicula'");
+
+                
+                $consulta->setFetchMode(PDO::FETCH_ASSOC); 
+                $consulta->execute();
+                $salida ="";
+    
+                foreach ($consulta as $key => $v) {
+                   $salida = $v['trailer'];
                             
                 }
                 $dbh=null;

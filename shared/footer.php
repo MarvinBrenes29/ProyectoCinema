@@ -42,6 +42,7 @@
   <script src="js/apps.js"></script>
   <script src="js/app.js"></script>
   <scrpt src="js/scriptSillas"></scrpt>
+  <scrpt src="js/timer.js"></scrpt>
 </body>
 
 </html>

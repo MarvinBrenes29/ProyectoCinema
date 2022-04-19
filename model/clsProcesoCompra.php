@@ -95,7 +95,7 @@ class clsProcesoCompra extends clsConexion{
                                 <div class='card-body'>
                                     <h4 mx-auto>$v[fecha]</h4>
                                     <h5 class='card-title'>Horarios</h5>
-                                    <a class='btn btn-primary' href='sillas.php?idhorario=$v[idhorario]' role='button'>$v[hora]</a>
+                                    <a class='btn btn-primary' href='sillas.php?idhorario=$v[idhorario]' role='button' onclick='cuentaTimer()'>$v[hora]</a>
                 
                 
                     ";
@@ -117,7 +117,7 @@ class clsProcesoCompra extends clsConexion{
                                 <div class='card-body'>
                                     <h4 mx-auto>$v[fecha]</h4>
                                     <h5 class='card-title'>Horarios</h5>
-                                    <a class='btn btn-primary' href='sillas.php?idhorario=$v[idhorario]' role='button'>$v[hora]</a>
+                                    <a class='btn btn-primary' href='sillas.php?idhorario=$v[idhorario]' role='button' onclick='cuentaTimer()'>$v[hora]</a>
                 
                 
                     ";
@@ -129,7 +129,7 @@ class clsProcesoCompra extends clsConexion{
 
                     $filas .= "
 
-                            <a class='btn btn-primary' href='sillas.php?idhorario=$v[idhorario]' role='button'>$v[hora]</a>
+                            <a class='btn btn-primary' href='sillas.php?idhorario=$v[idhorario]' role='button' onclick='cuentaTimer()'>$v[hora]</a>
                 
                 
                     ";
