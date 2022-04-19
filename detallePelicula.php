@@ -30,7 +30,7 @@ $compra->crearImagenesCartelera($_SESSION['idpelicula']);
   </section>
 
   <main class="movie__info container ">
-    <div class="movie__grid">
+    <div class="movie__position ">
       <div class="w-50">
         <h1 class="movie__heading"><?php echo $compra->titulo ?></h1>
         <p class="movie__resume"><?php echo $compra->sinopsis ?></p>

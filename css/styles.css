@@ -358,13 +358,18 @@ img {
 .movie__info {
   margin-top: 5rem;
   margin-bottom: 10rem;
+  padding: 2rem;
 }
 
-.movie__grid {
+.movie__position {
   display: flex;
   justify-content: space-between;
-}
 
+}
+.movie__container{
+  display: flex;
+  flex-direction: column;
+}
 .movie__heading {
   margin: 0;
   margin-bottom: 1rem;
@@ -931,10 +936,7 @@ height: 50rem;
   background-position: center;
   background-repeat: no-repeat;
 }
-.card{
-  height: 50rem;
 
-}
 .bg-white{
   padding: 1rem;
   height: auto;
