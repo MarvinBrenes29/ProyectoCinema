@@ -20,7 +20,7 @@ ob_start();
 
             </div>
 
-            <div class="table-responsive">
+            <div class="table-responsive-sm table-bordered table-hover">
                 <table class="table text-center">
                     <thead>
                         <tr><th scope="col">Banner</th>
