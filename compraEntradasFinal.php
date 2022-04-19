@@ -16,29 +16,7 @@ $idhorario = $_SESSION['idhorario'];
 
 
 <main class="bg-payment ">
-    <div class="container pt-5 mx-5">
-        <h1 class="display-4 pt-5 mx-5">Paso Final</h1>
-        <h1 class="display-6">
-
     
-        <?php
-
-            if(isset($_GET['entrada'])){
-                $conteoEntradas = count($vectorEntradas);
-
-                $montoEntradas = $conteoEntradas * $sillas->costoEntrada($idhorario);
-
-                $_SESSION['montoEntradas'] = $montoEntradas;
-
-                if($conteoEntradas == 1){
-                    echo 'El costo por esta entrada es: ₡'.$montoEntradas.'.';
-                }else{
-                    echo 'El costo por estas ' .$conteoEntradas.' entradas es: ₡'.$montoEntradas.'.';
-                }
-            }
-        ?>
-        </h1>
-    </div>
 
 
 
@@ -77,6 +55,36 @@ $idhorario = $_SESSION['idhorario'];
             <!-- <button type="submit" class="btn btn-primary mx-5">Comprar</button> -->
             <!-- <button type="buttom" class="btn btn-primary mx-5">Comprar</button> -->
             <a href='compra.php' role='button'>Procesar Pago</a>
+
+
+            <div class="container pt-5 mx-5">
+            <h1 class="pay__compra pt-5 mx-5">Paso Final</h1>
+            <h1 class="pay__compra--info">
+
+        
+
+                <?php
+
+                    if(isset($_GET['entrada'])){
+                        $conteoEntradas = count($vectorEntradas);
+
+                        $montoEntradas = $conteoEntradas * $sillas->costoEntrada($idhorario);
+
+                        $_SESSION['montoEntradas'] = $montoEntradas;
+
+                        if($conteoEntradas == 1){
+                            echo 'El costo por esta entrada es: ₡'.$montoEntradas.'.';
+                        }else{
+                            echo 'El costo por estas ' .$conteoEntradas.' entradas es: ₡'.$montoEntradas.'.';
+                        }
+                    }
+                ?>
+            </h1>
+    </div>
+
+
+
+
         </form>
 
 
