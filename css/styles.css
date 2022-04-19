@@ -438,7 +438,7 @@ img {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(8, 5vw);
-  grid-gap: 1.5rem; 
+  grid-gap: 0.8rem; 
 }
 
 .gallery__img {
@@ -446,6 +446,7 @@ img {
   height: 100%;
   object-fit: cover;
   display: block; 
+
 }
 
 .gallery__item--1 {
