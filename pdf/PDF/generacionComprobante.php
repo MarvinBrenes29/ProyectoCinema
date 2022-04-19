@@ -89,7 +89,7 @@ $style = array(
 // QRCODE,L : QR-CODE Low error correction
 $pdf->Text(20, 80, 'QRCODE L');
 // Aqui se podria agregar el trailer de la pelicula
-$pdf->write2DBarcode('https://www.instagram.com/floresycolores.cr/reels/', 'QRCODE,L', 20, 90, 50, 50, $style, 'N');
+$pdf->write2DBarcode('https://www.youtube.com/embed/QjeYtrpTv-o" title="YouTube video player', 'QRCODE,L', 20, 90, 50, 50, $style, 'N');
 
 
 
@@ -125,7 +125,7 @@ try {
 
     //Recipients
     $mail->setFrom('themovie.db.cinema@gmail.com', 'The MovieDB');
-    $mail->addAddress('cordoba.solis16@gmail.com', 'Joe User');     //Add a recipient
+    $mail->addAddress('cordoba.solis16@gmail.com');     //Add a recipient
 
     //Attachments
     $mail->addAttachment('./descargas/'.$_SESSION['idcompra'].'.pdf');         //Add attachments
