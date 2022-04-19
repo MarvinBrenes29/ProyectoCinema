@@ -150,11 +150,15 @@ img {
 .logo {
   width: 6rem;
 }
-
+.nav-item{
+  margin-right: 2rem;
+}
 .nav-link {
   color: #fff !important;
   margin-top: 1.5rem;
+  margin-bottom: 1rem;
 }
+
 
 .nav-link:hover {
   color: var(--primario) !important;
@@ -167,19 +171,32 @@ img {
   }
 }
 
+
 .nav-link--button {
   background-color: var(--primario);
-  padding: 1rem;
+  padding: 0.6rem;
+  margin-top: 2rem;
   color: #fff;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 400;
   border: none;
-  float:right
+  
  
 }
 .nav-link--button:hover{
   color: #181616;
   font-weight: bold;
+}
+.la{
+  margin-bottom: 3rem;
+
+}
+
+@media (min-width: 768px){
+  .la{
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 }
 
 /*Slider*/

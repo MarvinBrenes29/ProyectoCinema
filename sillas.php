@@ -17,11 +17,15 @@ $idhorario = $_SESSION['idhorario'];
     <title>Movie Seat Booking</title>
   </head>
   <body>
+
     
         <h1 id="contador">Hola</h1>
     
 
     <div class="movie-container">
+
+  
+
      
     </div>
 
