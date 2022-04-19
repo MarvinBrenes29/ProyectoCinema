@@ -1,8 +1,9 @@
 :root {
-  --primario: #c70039;
-  --secundario: #be4a6b;
-  --negro: #1e2022;
+  --primario: #FE4313;
+  --secundario: #F98364;
+  --negro: #1E2022;
   --gris: #f6f6f6;
+  --celeste: #0288d1;
   --fuentePrincipal: "Poppins", sans-serif;
 }
 
@@ -250,6 +251,7 @@ img {
   margin-bottom: 3rem;
   font-family: var(--fuentePricipal);
   font-size: 2.8rem;
+  color: var(--negro);
 }
 
 .propiedades__heading::after {
@@ -270,8 +272,10 @@ img {
   margin-top: 2rem;
   width: 20rem;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
+
+
 
 .pelicula__texto {
   margin-top: 1rem;

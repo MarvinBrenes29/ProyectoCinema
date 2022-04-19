@@ -69,8 +69,8 @@ $usuario = $_SESSION['usuario'];
                     
                 </div>
                 <div class="mb-3">
-                    <button type="submit" class="btn btn-outline-dark" href="">Modificar</button>
-                    <button type="submit" class="btn btn-outline-dark" href="">Cancelar</button>
+                    <button type="submit" class="btn btn-primary btn-lg" href="">Modificar</button>
+                    <button type="submit" class="btn btn-secondary btn-lg" href="">Cancelar</button>
                 </div>
             </form>
         </div>
