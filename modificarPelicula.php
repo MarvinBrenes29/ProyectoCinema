@@ -7,53 +7,64 @@ ob_start();
 ?>
   <form class="container w-40 m-auto" action="" method="POST" enctype="multipart/form-data">
 
-    <div class="administracion">
+    <div class="administracion mb-30">
 
-      <h1 class="administracion__heading">Administracion de Películas</h1>
+      <h1 class="adm__heading">Administracion de Películas</h1>
       
-      <div class="form-floating mb-3">
+      <div class="ing mb-3">
+        <label for="" class="mb-3">Titulo</label>
         <input type="text" class="form-control w-50 p-3" name="titulo" id="titulo" placeholder="Titulo">
-        <label for="">Titulo</label>
+        
       </div>
-      <div class="form-floating mb-3">
-        <input type="text" class="form-control w-50 p-3" name="actor_principal" id="actor_principal" placeholder="Titulo">
-        <label for="">Actor Principal</label>
+      <div class="mb-3">
+         <label for="" class="mb-3">Actor Principal</label>
+        <input type="text" class="form-control w-50 p-3" name="actor_principal" id="actor_principal" placeholder="Actor Principal">
+       
       </div>
-      <div class="form-floating mb-3">
-        <input type="text" class="form-control w-50 p-3" name="actor_secundario" id="actor_secundario" placeholder="Titulo">
-        <label for="">Actor Secundario</label>
+      <div class="mb-3">
+        <label for="" class="mb-3">Actor Secundario</label>
+        <input type="text" class="form-control w-50 p-3" name="actor_secundario" id="actor_secundario" placeholder="Actor Secundario">
+        
       </div>
-      <div class="form-floating mb-3">
-        <input type="text" class="form-control w-50 p-3" name="director" id="director" placeholder="Titulo">
-        <label for="">Director</label>
+      <div class="mb-3">
+        <label for="" class="mb-3">Director</label>
+        <input type="text" class="form-control w-50 p-3" name="director" id="director" placeholder="Director">
+        
       </div>
-      <div class="form-floating mb-3">
-        <input type="file" class="form-control w-50 p-3" name="poster" id="poster" placeholder="">
-        <label for="imagen">Poster</label>
+      <div class="mb-3">
+        <label for="imagen" class="mb-3">Poster</label>
+        <input type="file" class="form-control w-50 p-3" name="poster" id="poster" placeholder="Poster">
+        
       </div>
-      <div class="form-floating mb-3">
-        <input type="text" class="form-control w-50 p-3" name="clasificacion" id="clasificacion" placeholder="Titulo">
-        <label for="">Clasificación</label>
+      <div class= "mb-3">
+      <label for="" class="mb-3">Clasificación</label>
+        <input type="text" class="form-control w-50 p-3" name="clasificacion" id="clasificacion" placeholder="Clasificación">
+        
       </div>
-      <div class="form-floating mb-3">
-        <input type="text" class="form-control w-50 p-3" name="duracion" id="duracion" placeholder="Titulo">
-        <label for="">Minutos de Duración</label>
+      <div class= "mb-3">
+<label for="" class="mb-3">Minutos de Duración</label>
+        <input type="text" class="form-control w-50 p-3" name="duracion" id="duracion" placeholder="Minutos de Duración">
+        
       </div>
-      <div class="form-floating mb-3">
-        <input type="text" class="form-control w-50 p-3" name="genero" id="genero" placeholder="Titulo">
-        <label for="">Genero</label>
+      <div class="mb-3">
+        <label for="" class="mb-3">Genero</label>
+        <input type="text" class="form-control w-50 p-3" name="genero" id="genero" placeholder="Genero">
+        
       </div>
-      <div class="form-floating mb-3">
-        <input type="text" class="form-control w-50 p-3" name="idioma" id="idioma" placeholder="Titulo">
-        <label for="">Idioma</label>
+      <div class=" mb-3">
+        <label for="" class="mb-3">Idioma</label>
+        <input type="text" class="form-control w-50 p-3" name="idioma" id="idioma" placeholder="Idioma">
+        
       </div>
-      <div class="form-floating mb-3">
-        <input type="text" class="form-control w-50 p-3" name="sinopsis" id="sinopsis" placeholder="Titulo">
-        <label for="">Sinopsis</label>
+      <div class="mb-3">
+        <label for="" class="mb-3">Sinopsis</label>
+        <input type="text" class="form-control w-50 p-3" name="sinopsis" id="sinopsis" placeholder="Sipnosis">
+        
       </div>
-      <div class="form-floating mb-3">
-        <input type="url" class="form-control w-50 p-3" name="trailer" id="trailer" placeholder="Titulo">
-        <label for="">Trailer</label>
+      <div class="mb-3">
+ <label for="" class="mb-3">Trailer</label>
+        <input type="url" class="form-control w-50 p-3" name="trailer" id="trailer" placeholder="Trailer">
+       
       </div>
       <div class="form-floating mb-3">
         <p>Estado</p>

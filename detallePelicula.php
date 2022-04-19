@@ -1,5 +1,12 @@
 <?php
+
 include "shared/header.php";
+if(!isset($_SESSION['login'])){
+  ?>
+    <p class="alert alert-danger" role="alert">Error: Esta pelicula ya existe en el sistema</p>
+  <?php
+  header('location: index.php');
+}
 require "model/clsProcesoCompra.php";
 $_SESSION['idpelicula'] = $_GET['pelicula'];
 $compra = new clsProcesoCompra();

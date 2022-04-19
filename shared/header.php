@@ -4,6 +4,7 @@
 <html lang="en">
 
 <head>
+
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,12 +18,18 @@
     integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
     crossorigin=""/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script> -->
  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="styleSillas.css" />
     <link rel="stylesheet" href ="css/estilos-tabla.css">  
-      <link rel="stylesheet" href="css/styles.css">
+      <link rel="stylesheet" href="css/styles?2.0.css">
+      
   <title>Cinema</title>
 </head>
 
@@ -30,7 +37,7 @@
 
   <!-- Navbar  -->
   <section class="pb-4">
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top mt-10">
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
       <div class="container">
         <a href="index.php">
           <img class="logo" src="img/Logo.png" alt="">
@@ -76,11 +83,39 @@
                         </li>
                     </ul>
                 </div>
-            </div>
+          </div>
+            <?php } ?>
+<!-- ---------------------------------------------------------------------- -->
+              <?php if (isset($_SESSION["login"])) { ?> 
+                          <div class="container-fluid">
+                              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                      <li class="nav-item dropdown">
+                                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                          Configuracion
+                                          </a>
+                                          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                          <li><a class="dropdown-item" href="historial_compra.php">Historial de Compras</a></li>
+                                          <li><a class="dropdown-item" href="modificar_usuario.php">Modificar Usuario</a></li>
+                                          </ul>
+                                      </li>
+                                  </ul>
+                              </div>
+                          </div>
+              <?php } ?>
+<!-- ---------------------------------------------------------------------- -->
       
-          <?php } ?>
+          
+
+               
+
+
+
+
+
+          
           <!--Dropdown-->
-          </ul>
+          
           <?php if (!isset($_SESSION["login"])) { ?>
             <li>
               <a href="login.php" class="nav-link--button">Iniciar Sesión</a>
@@ -90,8 +125,9 @@
                 <li class="nav-item"><a class="nav-link" href="logout.php">Salir</a></li>
             <?php } ?>
             <?php if (isset($_SESSION["login"])) { ?>
-                <li><a id="linkUsr" href=""><img class="imgUsr" src="img/usuarios/<?php echo $_SESSION["usuario"] ?>.jpg" alt=""></a></li>
+                <li class="nav-item"><a id="linkUsr" class="nav-link" href=""><img class="imgUsr" src="img/usuarios/<?php echo $_SESSION["usuario"] ?>.jpg" alt=""></a></li>
             <?php } ?>
+            </ul>
         </div>
       </div>
     </nav>

@@ -136,8 +136,38 @@ class clsLogin extends clsConexion{
                 return $condicion;
             }
 
+            public function modificar_usuario($apellido1, $apellido2, $telefono, $fecha, $correo, $contrasenia, $usuario){
+
+                $dbh = $this->conectar();
+                if ($dbh != null) {
+                    try {
+                        
+        
+                        $consulta = $dbh->prepare("UPDATE tlogin SET apellido1=:apellido1, apellido2=:apellido2, telefono=:telefono, fecha_nacimiento=:fecha_nacimiento, correo=:correo, contrasenia=md5(:contrasenia) WHERE usuario=:usuario");
+        
+                        
+                        $consulta->bindParam(":apellido1", $apellido1);
+                        $consulta->bindParam(":apellido2", $apellido2);
+                        $consulta->bindParam(":telefono", $telefono);
+                        $consulta->bindParam(":fecha_nacimiento", $fecha);
+                        $consulta->bindParam(":correo", $correo);
+                        $consulta->bindParam(":contrasenia", $contrasenia);
+                        $consulta->bindParam(":usuario", $usuario);
+        
+                        
+                        $consulta->execute();
+                        $estado = true;
+                    } catch (PDOException $e) {
+                        $estado = false;
+                        $e->getMessage();
+                    } finally {
+                        $dbh = null;
+                        return $estado;
+                    }
+                }
+            }
+
+
 }
-    // Pruebas de clase
-    // $v = new clsLogin();
-    // $v->insertar_usuario("alsolis", "alberto", "solis", "cordoba", "84487506", "2022-04-11", "123", "cordoba@gmail.com", 0);
+    
 ?>
