@@ -15,7 +15,7 @@ ob_start();
                 </div>
                         
                 <div class="mt-5 mb-5 bd-highlight">
-                    <a href="nuevoBanner.php" class="btn btn-secondary"><i class="fas fa-plus"></i> Nuevo</a>
+                    <a href="nuevoBanner.php" class="btn btn-secondary btn-lg"><i class="fas fa-plus"></i> Nuevo</a>
                 </div>
 
             </div>

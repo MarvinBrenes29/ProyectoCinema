@@ -1,8 +1,9 @@
 :root {
-  --primario: #c70039;
-  --secundario: #be4a6b;
-  --negro: #1e2022;
+  --primario: #FE4313;
+  --secundario: #F98364;
+  --negro: #1E2022;
   --gris: #f6f6f6;
+  --celeste: #0288d1;
   --fuentePrincipal: "Poppins", sans-serif;
 }
 
@@ -250,6 +251,7 @@ img {
   margin-bottom: 3rem;
   font-family: var(--fuentePricipal);
   font-size: 2.8rem;
+  color: var(--negro);
 }
 
 .propiedades__heading::after {
@@ -270,8 +272,10 @@ img {
   margin-top: 2rem;
   width: 20rem;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
+
+
 
 .pelicula__texto {
   margin-top: 1rem;
@@ -358,13 +362,18 @@ img {
 .movie__info {
   margin-top: 5rem;
   margin-bottom: 10rem;
+  padding: 2rem;
 }
 
-.movie__grid {
+.movie__position {
   display: flex;
   justify-content: space-between;
-}
 
+}
+.movie__container{
+  display: flex;
+  flex-direction: column;
+}
 .movie__heading {
   margin: 0;
   margin-bottom: 1rem;
@@ -433,7 +442,7 @@ img {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(8, 5vw);
-  grid-gap: 1.5rem; 
+  grid-gap: 0.8rem; 
 }
 
 .gallery__img {
@@ -441,6 +450,7 @@ img {
   height: 100%;
   object-fit: cover;
   display: block; 
+
 }
 
 .gallery__item--1 {
@@ -931,10 +941,7 @@ height: 50rem;
   background-position: center;
   background-repeat: no-repeat;
 }
-.card{
-  height: 50rem;
 
-}
 .bg-white{
   padding: 1rem;
   height: auto;

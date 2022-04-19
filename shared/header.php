@@ -28,7 +28,7 @@
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="styleSillas.css" />
     <link rel="stylesheet" href ="css/estilos-tabla.css">  
-      <link rel="stylesheet" href="css/styles?3.0.css">
+      <link rel="stylesheet" href="css/styles?5.0.css">
       
   <title>Cinema</title>
 </head>

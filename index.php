@@ -36,21 +36,14 @@ ob_start();
   <!--.seccion cartelera-->
   <section class="container estrenos">
     <h3 class="propiedades__heading">Últimos Estrenos</h3>
-    <div class="pelicula">
-      <div class="swiper-container swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide"><img class="img__pelicula" src="img/dog.jpg" alt="Movie Title"> Some Text</div>
-          <div class="swiper-slide"><img class="img__pelicula" src="img/dog.jpg" alt="Movie Title">Some Text</div>
-          <div class="swiper-slide"><img class="img__pelicula" src="img/dog.jpg" alt="Movie Title">Some Text</div>
-          <div class="swiper-slide"><img class="img__pelicula" src="img/dog.jpg" alt="Movie Title">Some Text</div>
-          <div class="swiper-slide"><img class="img__pelicula" src="img/dog.jpg" alt="Movie Title">Some Text</div>
+    <div class="pelicula d-flex flex-row">
+      
+        
+          <div class="mr-5"><img class="img__pelicula" src="img/dog.jpg" alt="Movie Title"> Some Text</div>
+ 
 
-        </div>
-        <!-- Add Pagination -->
-        <!-- <div class="swiper-pagination"></div> -->
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-      </div>
+      
+      
     </div>
   </section>
   <!--.ultimosEstrenos-->
