@@ -13,7 +13,7 @@ unset($_SESSION['vector']);
     <div class=" galeria">
             <div class="gallery">
                 <figure class="gallery__item gallery__item--1">
-                    <img src="img/dog.jpg" alt="Gallery image 1" class="gallery__img">
+                    <img src="img/looper.svg" alt="Gallery image 1" class="gallery__img">
                 </figure>
                 <figure class="gallery__item gallery__item--2">
                     <img src="img/dog.jpg" alt="Gallery image 2" class="gallery__img">
