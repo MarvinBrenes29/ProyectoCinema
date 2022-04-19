@@ -18,7 +18,7 @@ $idhorario = $_SESSION['idhorario'];
   </head>
   <body>
   
-    <div class="movie-container">
+    <div class="movie-container container">
      
     </div>
 
