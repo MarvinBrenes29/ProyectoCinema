@@ -32,7 +32,7 @@ $idhorario = $_SESSION['idhorario'];
     </form>
 
 
-        <form class="">
+        <form class="p-5">
 
            
                 <label for="inputEmail3" class="pay__info">Nombre titular</label>
@@ -54,11 +54,11 @@ $idhorario = $_SESSION['idhorario'];
 
             <!-- <button type="submit" class="btn btn-primary mx-5">Comprar</button> -->
             <!-- <button type="buttom" class="btn btn-primary mx-5">Comprar</button> -->
-            <a href='compra.php' role='button'>Procesar Pago</a>
+            <a class="btn btn-primary btn-lg" href='compra.php' role='button'>Procesar Pago</a>
 
 
             <div class="container pt-5 mx-5">
-            <h1 class="pay__compra pt-5 mx-5">Paso Final</h1>
+            
             <h1 class="pay__compra--info">
 
         

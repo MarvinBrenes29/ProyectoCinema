@@ -75,10 +75,7 @@ $mapa = new clsMapa();
 
 <section class="mt-5">
     <div class="contacto__heading">
-        <h4 class="contacto__texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
-            vulputate sed
-            tempor vulputate. Iaculis fusce Pellentesque vulputate sed
-            tempor vulputate. Iaculis fusc</h4>
+        <h4 class="contacto__texto">Estamos trabajando en llegar a muchos mas lugares para que puedas visitarnos, pero por lo pronto todos estos son los lugares en los que nos encontramos</h4>
     </div>
 </section>
 <!--.contacto-->
@@ -86,9 +83,8 @@ $mapa = new clsMapa();
 
 <section class="container contacto__grid">
     <div class="contacto__info">
-        <h3 class="contacto__titulo">Lorem Ipsum</h3>
-        <p class="contacto__descripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis cum
-            inventore esse sint itaque optio fugiat recusandae voluptatum</p>
+        <h3 class="contacto__titulo">Contáctenos</h3>
+        <p class="contacto__descripcion">Estamos comprometidos en darte el mejor de los servicios, por eso te animamos a contactarnos en la siguiente informacion</p>
             <div class="contacto__logos">
                 <img src="img/telephone.png"  class="contacto__img"alt="">
                 <p class="contacto__redes">88-88-88</p>
@@ -106,7 +102,7 @@ $mapa = new clsMapa();
 
     <div class="contacto">
         <div class="ms-5">
-            <h3 class="contacto__titulo">Lorem Ipsum</h3>
+            <h3 class="contacto__titulo">Sugerencias</h3>
 
             <form id="enviar-mail" class="">
 

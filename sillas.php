@@ -19,7 +19,7 @@ $idhorario = $_SESSION['idhorario'];
   <body>
 
     
-        <h1 id="contadorTimer">Hola</h1>
+        <!-- <h1 id="contadorTimer">Hola</h1> -->
     
 
     <div class="movie-container">
@@ -119,7 +119,7 @@ $idhorario = $_SESSION['idhorario'];
     </p> -->
     <div class="container">
       <a href='index.php' role='button'><button type="buttom">Regresar</button></a>
-      <a role='button'><button type="buttom" onclick="enviar_datos()">Comprar</button></a>
+      <a class="btn btn-primary btn-lg" role='button'><button type="buttom" onclick="enviar_datos()">Comprar</button></a>
     </div>
     
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
