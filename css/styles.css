@@ -295,7 +295,7 @@ img {
 /*--HERO--*/
 .hero {
   min-height: 60rem;
-  background-image: url(../img/Venom.jpg);
+  background-image: url(../img/bg-cinema.png);
   background-size: cover;
   background-position: center;
   display: flex;

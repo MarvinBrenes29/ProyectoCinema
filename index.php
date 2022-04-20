@@ -34,12 +34,14 @@ ob_start();
 
 
   <!--.seccion cartelera-->
-  <section class="container estrenos">
+  <section class="container cartelera">
     <h3 class="propiedades__heading">Últimos Estrenos</h3>
-    <div class="pelicula d-flex flex-row">
+    <div class=" d-flex flex-row gap-3 w-50">
       
         
-          <div class="mr-5"><img class="img__pelicula" src="img/dog.jpg" alt="Movie Title"> Some Text</div>
+          <div class=""><img class="img__pelicula" src="img/dog.jpg" alt="Movie Title"> Some Text</div>
+          <div class=""><img class="img__pelicula" src="img/dog.jpg" alt="Movie Title"> Some Text</div>
+          <div class=""><img class="img__pelicula" src="img/dog.jpg" alt="Movie Title"> Some Text</div>
  
 
       
