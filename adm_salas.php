@@ -5,22 +5,22 @@ $clase_pelicula = new clsAdm_peliculas();
 ob_start();
 ?>
 
-<main class="mt-5">
+<main class="adm">
  
-        <div class="container mb-5">
+        <div class="container mb-70">
             <div class="bd-highlight mb-2 pb-5 row">
 
-                <div class="mt-5 pt-5 bd-highlight col">
-                        <h2>Administracion de Salas</h2>
+                <div class="bd-highlight col">
+                        <h2 class="adm__heading">Administración de Salas</h2>
                 </div>
                         
                 <div class="p-5 bd-highlight">
-                    <a href="nuevaSala.php" class="btn btn-secondary"><i class="fas fa-plus"></i> Nuevo</a>
+                    <a href="nuevaSala.php" class="btn btn-secondary btn-lg"><i class="fas fa-plus"></i> Nuevo</a>
                 </div>
 
             </div>
 
-            <div class="table-responsive">
+            <div class="table-responsive-sm table-bordered table-hover">
                 <table class="table text-center">
                     <thead>
                         <tr>

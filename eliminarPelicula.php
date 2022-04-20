@@ -1,4 +1,5 @@
 <?php
+ob_start();
 include "shared/header.php";
 include "model/clsAdm_peliculas.php";
 $idpelicula=$_GET["idpelicula"];
@@ -10,12 +11,12 @@ if($_POST){
   echo "pos";
   $v-> idpelicula = $_POST["idpelicula"];
   $v->eliminar_pelicula();
-  header("Location:adm_peliculas.php");
+  header("Location: adm_peliculas.php");
 }
 ?>
 
 <main>
-    <div class="d-flex flex-column container mt-5 pt-5">
+    <div class="d-flex flex-column container mb-30 pt-5">
         <h1 class="p-2 bd-highlight">Esta Seguro que quiere eliminar este Registro?</h1>
         <h2 class="p-2 bd-highlight">Los datos no se podrán recuperar</h2>
         <div class="p-2 bd-highlight">

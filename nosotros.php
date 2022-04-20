@@ -1,47 +1,81 @@
 <?php
 include "shared/header.php";
+unset($_SESSION['idhorario']);
+
+require "model/clsMapa.php";
+$mapa = new clsMapa();
 ?>
 
 
-<section class="container__mapa">
-   <h3 class="mapa__heading">Sucursales</h3>
-   <div id="contenido">
-            <fieldset>
-              <legend class="mapa__provincia">Seleccione la Provincia</legend>
-                <select class="form-control form-control-lg mb-5" id="provincia">
-                  <option class="mapa__provincias" value="San Jose">San José</option>
-                  <option class="mapa__provincias"  value="Alajuela">Alajuela</option>
-                  <option class="mapa__provincias"  value="Heredia">Heredia</option>
-                  <option class="mapa__provincias" value="Cartago">Cartago</option>
-                  <option class="mapa__provincias" value="Guanacaste">Guanacaste</option>
-                  <option class="mapa__provincias" value="Puntarenas">Puntarenas</option>
-                  <option class="mapa__provincias" value="Limon">Limón</option>
-                </select>
-                <button id="cargar" class="btn btn-outline-success btn-lg">Buscar</button>
-            </fieldset>
+<section>
+    <div class="container">
+        <div>
+            <h3 class="mapa__heading">Sucursales</h3>
+        </div>
+  
+
+   <div id="contenedor">
+  <!--Elemento Contenido-->
+  <div class="contenido">
+    <form method="POST">
+      <legend class="mapa__provincia">Seleccione la  Provincia</legend>
+        <select class="form-control  form-group-lg" name="provincia" id="provincia">
+          <option value="san jose">San José</option>
+          <option value="alajuela">Alajuela</option>
+          <option value="heredia">Heredia</option>
+          <option value="cartago">Cartago</option>
+          <option value="guanacaste">Guanacaste</option>
+          <option value="puntarenas">Puntarenas</option>
+          <option value="limon">Limón</option>
+        </select>
+        <button id="cargar" type="submit" class="btn btn-outline-success  btn-lg">Cargar Ubicacion</button>
+    </form>
+
+    <?php 
+        
+
+        if(isset($_POST['provincia'])){
+            $provincia = $_POST['provincia'];
+        }else{
+            $provincia = 'san jose';
+        }
+    ?>
+
+    <?php 
+    if(isset($provincia)){
+        $latitud = $mapa->obtenerlatitud($provincia);
+        $longitud = $mapa->obtenerlongitud($provincia);
+    }else{ 
+        $latitud = 9.935470955250178;
+        $longitud = -84.10443318733695;
+    }?>
+    
+    
+    <br><br>
+
+    <fieldset id="contenedorMapa">
+     
+      <div id="containerMapa">
+        <div id="map" class="mx-auto"></div>
+      </div>
+      
+  <!--Fin elemento Contenido-->
+
+ </div>
+ <!--Fin Elemento Principal-->
+</div>
+
+
+
 
     </div>
-
  
-   <fieldset id="contenedorMapa">
-      
-              <div id="containerMapa">
-                <div id="map" class="mx-auto"></div>
-              </div>
-              <div id='mapaProvincia' style='width: 500px; height: 400px'></div>
-            </fieldset>
-          </div>
-   </div>
-
+  
 </section>
-<!--map-->
 
 <section class="mt-5">
     <div class="contacto__heading">
-        <h4 class="contacto__texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
-            vulputate sed
-            tempor vulputate. Iaculis fusce Pellentesque vulputate sed
-            tempor vulputate. Iaculis fusc</h4>
+        <h4 class="contacto__texto">Estamos trabajando en llegar a muchos mas lugares para que puedas visitarnos, pero por lo pronto todos estos son los lugares en los que nos encontramos</h4>
     </div>
 </section>
 <!--.contacto-->
@@ -49,9 +83,8 @@ include "shared/header.php";
 
 <section class="container contacto__grid">
     <div class="contacto__info">
-        <h3 class="contacto__titulo">Lorem Ipsum</h3>
-        <p class="contacto__descripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis cum
-            inventore esse sint itaque optio fugiat recusandae voluptatum</p>
+        <h3 class="contacto__titulo">Contáctenos</h3>
+        <p class="contacto__descripcion">Estamos comprometidos en darte el mejor de los servicios, por eso te animamos a contactarnos en la siguiente informacion</p>
             <div class="contacto__logos">
                 <img src="img/telephone.png"  class="contacto__img"alt="">
                 <p class="contacto__redes">88-88-88</p>
@@ -69,7 +102,7 @@ include "shared/header.php";
 
     <div class="contacto">
         <div class="ms-5">
-            <h3 class="contacto__titulo">Lorem Ipsum</h3>
+            <h3 class="contacto__titulo">Sugerencias</h3>
 
             <form id="enviar-mail" class="">
 
@@ -100,7 +133,7 @@ include "shared/header.php";
                     </div>
                 </div>
                 <div>
-                    <button id="enviar" class="btn__enviar" type="submit">Enviar
+                    <button id="enviar" class="boton draw-border" type="submit">Enviar
                     </button>
 
                 </div>
@@ -113,11 +146,32 @@ include "shared/header.php";
 </section>
 
 
-<script src="js/app.js"></script>
+
+
+
+
+
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
     integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
     crossorigin=""></script>
 
+    
+    
+    <?php
+       echo '<script> var map = L.map("map").setView([ "'.$latitud.'" , "'.$longitud.'"], 17);
+            var marcador = L.marker([ "'.$latitud.'" , "'.$longitud.'"]).addTo(map);
+            marcador.bindPopup(`<h1>The MovieDB</h1>`);  </script>';
+    ?>
+    <script>
+        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            maxZoom: 22,
+            id: 'mapbox/streets-v11',
+            tileSize: 512,
+            zoomOffset: -1,
+            accessToken: 'pk.eyJ1IjoiYWxzb2xpczEyMyIsImEiOiJja3prdGZidmMxbmVxMm9xcmJwa3RyOHFiIn0.KKEIgHgO6Pj3YqAzp_Lw2A'
+        }).addTo(map);
+    </script>
 <?php
 include "shared/footer.php";
 ?>

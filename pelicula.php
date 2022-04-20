@@ -1,33 +1,42 @@
 <?php
 include "shared/header.php";
+unset($_SESSION['idhorario']);
+unset($_SESSION['vector']);
 ?>
 
 <main>
 
 <section class=" container-img peliculas">
     <div class="peliculas__heading">
-            <h2> <span>Próximos <span>Estrenos</span> </h2>
+            <h2 class="">Próximos Estrenos</h2>
     </div>
     <div class=" galeria">
             <div class="gallery">
                 <figure class="gallery__item gallery__item--1">
-                    <img src="img/dog.jpg" alt="Gallery image 1" class="gallery__img">
+                    <img src="img/looper.jpeg" alt="Gallery image 1" class="gallery__img">
                 </figure>
                 <figure class="gallery__item gallery__item--2">
                     <img src="img/dog.jpg" alt="Gallery image 2" class="gallery__img">
                 </figure>
                 <figure class="gallery__item gallery__item--3">
-                    <img src="img/dog.jpg" alt="Gallery image 3" class="gallery__img">
+                    <img src="img/men_in_black.jpeg" alt="Gallery image 3" class="gallery__img">
                 </figure>
                 <figure class="gallery__item gallery__item--4">
-                    <img src="img/dog.jpg" alt="Gallery image 4" class="gallery__img">
+                    <img src="img/LIFE-AQUATIC.jpeg" alt="Gallery image 4" class="gallery__img">
                 </figure>
                 <figure class="gallery__item gallery__item--5">
-                    <img src="img/dog.jpg" alt="Gallery image 5" class="gallery__img">
+                    <img src="img/silent_hill.jpeg" alt="Gallery image 5" class="gallery__img">
                 </figure>
                 <figure class="gallery__item gallery__item--6">
-                    <img src="img/dog.jpg" alt="Gallery image 6" class="gallery__img">
+                    <img src="img/spiderman.jpeg" alt="Gallery image 6" class="gallery__img">
                 </figure>
+                <figure class="gallery__item gallery__item--7">
+                    <img src="img/simios.jpeg" alt="Gallery image 7" class="gallery__img">
+                </figure>
+                <figure class="gallery__item gallery__item--8">
+                    <img src="img/joker.jpeg" alt="Gallery image 8" class="gallery__img">
+                </figure>
+         
             </div>
         </div>
 

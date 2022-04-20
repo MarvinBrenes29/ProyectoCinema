@@ -2,6 +2,8 @@
 include "shared/header.php";
 require "model/clsAdm_peliculas.php";
 $clase_pelicula = new clsAdm_peliculas();
+unset($_SESSION['idhorario']);
+unset($_SESSION['vector']);
 ob_start();
 ?>
 
@@ -9,10 +11,7 @@ ob_start();
   <!--.slider-->
   <section class="slider ">
     <ul class="slider__contenedor">
-      <li class="slider__slide">
-        <img class="slider__imagen" src="img/Venom.jpg" alt="venom">
-      </li>
-
+      
       <?php echo $clase_pelicula->crearImagenesBanner(); ?>
 
     </ul>
@@ -32,23 +31,18 @@ ob_start();
 
 
   <!--.seccion cartelera-->
-  <section class="container estrenos">
+  <section class="container cartelera">
     <h3 class="propiedades__heading">Últimos Estrenos</h3>
-    <div class="pelicula">
-      <div class="swiper-container swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide"><img class="img__pelicula" src="img/dog.jpg" alt="Movie Title"> Some Text</div>
-          <div class="swiper-slide"><img class="img__pelicula" src="img/dog.jpg" alt="Movie Title">Some Text</div>
-          <div class="swiper-slide"><img class="img__pelicula" src="img/dog.jpg" alt="Movie Title">Some Text</div>
-          <div class="swiper-slide"><img class="img__pelicula" src="img/dog.jpg" alt="Movie Title">Some Text</div>
-          <div class="swiper-slide"><img class="img__pelicula" src="img/dog.jpg" alt="Movie Title">Some Text</div>
+    <div class=" d-flex flex-row gap-3 w-50">
+      
+        
+          <div class=""><img class="img__pelicula" src="img/dog.jpg" alt="Movie Title"> Some Text</div>
+          <div class=""><img class="img__pelicula" src="img/dog.jpg" alt="Movie Title"> Some Text</div>
+          <div class=""><img class="img__pelicula" src="img/dog.jpg" alt="Movie Title"> Some Text</div>
+ 
 
-        </div>
-        <!-- Add Pagination -->
-        <!-- <div class="swiper-pagination"></div> -->
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-      </div>
+      
+      
     </div>
   </section>
   <!--.ultimosEstrenos-->

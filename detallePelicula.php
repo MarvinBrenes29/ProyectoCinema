@@ -1,5 +1,12 @@
 <?php
+
 include "shared/header.php";
+if(!isset($_SESSION['login'])){
+  ?>
+    <p class="alert alert-danger" role="alert">Error: Esta pelicula ya existe en el sistema</p>
+  <?php
+  header('location: index.php');
+}
 require "model/clsProcesoCompra.php";
 $_SESSION['idpelicula'] = $_GET['pelicula'];
 $compra = new clsProcesoCompra();
@@ -23,7 +30,7 @@ $compra->crearImagenesCartelera($_SESSION['idpelicula']);
   </section>
 
   <main class="movie__info container ">
-    <div class="movie__grid">
+    <div class="movie__position ">
       <div class="w-50">
         <h1 class="movie__heading"><?php echo $compra->titulo ?></h1>
         <p class="movie__resume"><?php echo $compra->sinopsis ?></p>
