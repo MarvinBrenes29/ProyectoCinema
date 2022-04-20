@@ -19,7 +19,7 @@ $idhorario = $_SESSION['idhorario'];
   <body>
 
     
-        <h1 id="contador">Hola</h1>
+        <h1 id="contadorTimer">Hola</h1>
     
 
     <div class="movie-container">
